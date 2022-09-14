@@ -1,0 +1,30 @@
+.App {
+    background-color: #403C3B;
+}
+
+@media (max-width: 375px) {
+    body {
+        width: 375px;
+    }
+    .App {
+        width: 375px;
+    }
+}
+@media (max-width: 375px) {
+    body {
+        width: 375px;
+    }
+    .App {
+        width: 600px;
+    }
+}
+
+@media (max-width: 577px) {
+    body {
+        width: 100%;
+    }
+    .App {
+        width: 615px;
+    }
+}
+

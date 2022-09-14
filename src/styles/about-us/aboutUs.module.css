@@ -1,0 +1,84 @@
+.aboutUs {
+    display: flex;
+    width: 97%;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-image: url('../../images/about-us/AboutUs.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 70px;
+    left: 45px;
+}
+
+.aboutKafeInfo {
+    background-image: url('../../images/about-us/Rectangle\ 2.png');
+    background-size: auto;
+    padding: 60px 60px;
+
+}
+
+.aboutKafeInfo p {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.5;
+    line-height: 25px;
+}
+
+.aboutKafeBlocks {
+    display: flex;
+    width: 600px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.aboutKafeBlocks div {
+    color: white;
+    font-size: 18px;
+    background-image: url('../../images/about-us/Rectangle\ 7.2.png');
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 180px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.aboutKafeBlocks div:hover {
+    color: #79B282;
+}
+
+.aboutImg {
+    width: 70px;
+    height: 60px;
+    padding: 45px 0px 20px 0px;
+}
+
+
+
+.title {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.btn {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 15.83px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 17px 20px 17px 45px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #79B282;;
+    
+}

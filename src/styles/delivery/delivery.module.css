@@ -1,0 +1,382 @@
+.DeliveryPage {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.toCart {
+    color: white;
+    margin: 15px 0px 20px 0px;
+}
+
+.deliveryTitle {
+    font-size: 32px;
+    font-weight: 700;
+    padding-left: 20px;
+    border-left: 5px solid #618967;
+    color: white;
+    margin: 15px 0px 40px 0px;
+
+}
+
+.contacts {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+    width: 800px;
+    max-height: 370px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.contacts span {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.inputContacts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputContacts input {
+    width: 363px;
+    padding: 15px 0px 15px 10px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: linear-gradient(93deg, #494544 0%, #504B4A 100%);
+}
+
+.chooseDelivery {
+    border: 2px solid #72A479;
+    width: 360px;
+    font-size: 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    display: flex;
+    color: white;
+    border-radius: 10px;
+    margin: 20px 30px;
+}
+
+.chooseDelivery div {
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 17px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.active {
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+}
+
+.btn {
+    height: 60px;
+    background:  linear-gradient(93deg, #494544 0%, #504B4A 100%);
+    border-right: 2px solid #72A479;
+}
+.delivery {
+    min-height: 302px;
+    max-height: 456px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    width: 800px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 30px 30px;
+    color: white;
+    font-size: 18px;
+}
+
+.payment {
+    min-height: 181px;
+    max-height: 249px;
+    width: 800px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.change {
+    width: 173px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px 30px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 18px;
+    font-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.chooseTime {
+    width: 185px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 18px;
+    font-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.countOfPerson {
+    display: flex;
+    justify-content: space-around;
+    width: 263px;
+    height: 60px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 20px 30px;
+}
+
+.accept {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 85px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.btnOfDelivery {
+    width: 209px;
+    height: 51px;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+.checkboxAccept {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.accept div {
+    display: flex;
+    align-items: center;
+}
+
+.CounterOfPerson {
+    width: 70px;
+    display: flex;
+}
+
+.CounterOfPerson span {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.minus {
+    cursor: pointer;
+}
+.plus {
+    cursor: pointer;
+}
+
+.paymentTitle {
+     color: white;
+     font-size: 18px;
+     margin: 30px;
+}
+
+.paymentMethod {
+    display: flex;
+    flex-wrap: wrap;
+    width: 552px;
+    border-radius: 10px;
+    border: 2px solid #72A479;
+    margin: 0px 30px;
+    
+}
+
+.chooseRestaurant {
+    width: 363px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 45px;
+}
+
+.chooseRestaurant span {
+    color: white;
+    font-size: 16px;
+    width: 210px;
+    opacity: 0.6;
+}
+
+.paymentMethod div {
+    border-radius: 10px;
+    width: 184px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+.timeOfDelivery {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 800px;
+}
+
+.timeOfDeliveryOption {
+    display: flex;
+    border: 2px solid #72A479;
+    border-radius: 10px;
+    width: 368px;
+    margin-left: 30px;
+}
+
+
+.timeOfDeliveryOption div {
+    width: 184px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    height: 63px;
+} 
+
+.timeOfDeliveryTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin: 30px;
+}
+
+.timeOut {
+    background-image: url('../../images/time-out-banner/TimeOut.png');
+    width: 800px;
+    border-radius: 10px;
+    height: 154px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.timeOutImg {
+    padding-top: 20px;
+}
+
+.timeOutInfo {
+    width: 500px;
+}
+
+.timeOutInfo span {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+}
+.timeOutInfo p {
+    font-size: 18px;
+    color: white;
+    opacity: 0.7;
+    margin: 25px 0px 0px 0px;
+}
+
+.deliveryAddress span {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.deliveryStreet {
+    width: 413px;
+}
+
+.comment {
+    width: 601px;
+}
+
+.deliveryAddress {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.homeNumber {
+    width: 171px;
+}
+
+.optionsPlace {
+    width: 225px;
+}
+
+.entrance {
+    width: 173px;
+}
+
+.floor {
+    width: 173px;
+}
+
+.deliveryData {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.deliveryData input {
+    border-radius: 10px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    margin-bottom: 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+    padding-left: 20px;
+} 
