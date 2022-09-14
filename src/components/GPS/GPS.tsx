@@ -24,7 +24,6 @@ const AboutUsGPS = () => {
                         <img className={style.message} src={Message} alt="" />
                         <div className={style.ourEmail}>
                             <span>Наша почта: </span>
-                            <b>auto.wash@gmail.com</b>
                         </div>
                     </div>
                 </div>
