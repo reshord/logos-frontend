@@ -13,7 +13,7 @@ instance.interceptors.request.use((config) => {
 
 export const addProducts = createAsyncThunk('addProd', async () => {
     try {
-        return await axios.get<CardInfo[]>('https://dashboard.heroku.com/apps/mern-restaurant-logos').then(res => res.data)
+        return await axios.get<CardInfo[]>('https://logos-cafe.herokuapp.com/').then(res => res.data)
     }catch (e) {
         console.error(e);
     }
@@ -21,7 +21,7 @@ export const addProducts = createAsyncThunk('addProd', async () => {
 export const authLogin = createAsyncThunk('authLogin', async ({email, password}: FieldValues) => {
     const token = window.localStorage.getItem('token')
     try {
-        const {data} = await axios.post<FieldValues>('https://dashboard.heroku.com/apps/mern-restaurant-logos/auth/login', {
+        const {data} = await axios.post<FieldValues>('https://logos-cafe.herokuapp.com/auth/login', {
             email,
             password
         }, {
@@ -36,7 +36,7 @@ export const authLogin = createAsyncThunk('authLogin', async ({email, password}:
 })
 export const authRegister = createAsyncThunk('authRegister', async ({email, password, confirmPassword}: FieldValues) => {
     try {
-        const {data} = await axios.post<FieldValues>('https://dashboard.heroku.com/apps/mern-restaurant-logos/auth/register', {
+        const {data} = await axios.post<FieldValues>('https://logos-cafe.herokuapp.com//auth/register', {
             email,
             password,
             confirmPassword
@@ -49,7 +49,7 @@ export const authRegister = createAsyncThunk('authRegister', async ({email, pass
 
 export const logout = createAsyncThunk('logout', async ({email}: any) => {
     try {
-        const {data} = await axios.post('https://dashboard.heroku.com/apps/mern-restaurant-logos/auth/logout', {
+        const {data} = await axios.post('https://logos-cafe.herokuapp.com//auth/logout', {
             email
         })
 
