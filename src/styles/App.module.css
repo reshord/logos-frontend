@@ -2,12 +2,12 @@
     background-color: #403C3B;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
     body {
-        width: 375px;
+        width: 175px;
     }
     .App {
-        width: 375px;
+        width: 275px;
     }
 }
 @media (max-width: 375px) {
