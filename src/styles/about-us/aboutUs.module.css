@@ -1,21 +1,17 @@
 .aboutUs {
-    display: flex;
-    width: 97%;
-    justify-content: space-between;
+    width: 1000px;
     margin: 0 auto;
-    background-image: url('../../images/about-us/AboutUs.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: relative;
-    top: 70px;
-    left: 45px;
+    padding-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+    height: 680px;
 }
 
 .aboutKafeInfo {
     background-image: url('../../images/about-us/Rectangle\ 2.png');
     background-size: auto;
     padding: 60px 60px;
-
+    max-width: 350px;
 }
 
 .aboutKafeInfo p {
@@ -28,9 +24,10 @@
 
 .aboutKafeBlocks {
     display: flex;
-    width: 600px;
+    width: 500px;
     flex-wrap: wrap;
     margin-top: 30px;
+    height: 500px;
 }
 
 .aboutKafeBlocks div {
@@ -81,4 +78,96 @@
 .btn:hover {
     color: #79B282;;
     
+}
+
+@media (max-width: 940px) {
+    .aboutUs {
+        width: 80%;
+        margin-bottom: 50px;
+        height: 700px;
+    }
+    .aboutKafeBlocks {
+        margin-top: 0;
+        margin-left: 40px;
+    }
+}
+@media (max-width: 880px) {
+    .aboutUs {
+        height: 800px;
+    }
+}
+@media (max-width: 836px) {
+    .aboutKafeBlocks div {
+        width: 100px;
+        height: 100px;
+    }
+    .aboutKafeBlocks {
+        display: none;
+    }
+}
+@media (max-width: 672px) {
+    .aboutKafeBlocks div {
+        width: 170px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 580px) {
+    .aboutKafeBlocks {
+        display: none;
+    }
+}
+@media (max-width: 546px) {
+    .aboutUs {
+        height: 700px;
+    }
+    .aboutKafeInfo {
+        height: 90%;
+    }
+}
+@media (max-width: 460px) {
+    .aboutUs {
+        height: 800px;
+    }
+    
+}
+@media (max-width: 425px) {
+    .aboutUs {
+        height: 870px;
+    }
+    
+}
+@media (max-width: 395px) {
+    .aboutUs {
+        height: 920px;
+    }
+    
+}
+
+@media (max-width: 376px) {
+    .aboutUs {
+        background-image: none;
+        display: block;
+        width: 376px;
+        height: 740px;
+        left: 0;
+
+    }
+    .aboutImg {
+        width: 40px;
+        height: 40px;
+    }
+    .aboutKafeBlocks div {
+        width: 80px;
+        height: 80px;
+    }
+    .aboutKafeBlocks {
+        display: none;
+    }
+    .aboutKafeInfo {
+        height: 691px;
+    }
+    .aboutKafeInfo span {
+        font-size: 20px;
+    }
 }

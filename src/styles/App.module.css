@@ -2,29 +2,21 @@
     background-color: #403C3B;
 }
 
-@media (max-width: 389px) {
+@media (max-width: 376px) {
     body {
-        width: 175px;
+        width: 376px;
     }
     .App {
-        width: 275px;
-    }
-}
-@media (max-width: 375px) {
-    body {
-        width: 375px;
-    }
-    .App {
-        width: 600px;
+        width: 376px;
     }
 }
 
-@media (max-width: 577px) {
+/* @media (max-width: 577px) {
     body {
         width: 100%;
     }
     .App {
         width: 615px;
     }
-}
+} */
 

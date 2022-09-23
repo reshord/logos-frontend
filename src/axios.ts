@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { CardInfo, FieldValues, LogoutType } from "./types/types";
+import { CardInfo, FieldValues, LogoutType, ReviewsTypes } from "./types/types";
 
     
 const instance = axios.create({
@@ -49,7 +49,7 @@ export const authRegister = createAsyncThunk('authRegister', async ({email, pass
 
 export const logout = createAsyncThunk('logout', async ({email}: any) => {
     try {
-        const {data} = await axios.post('https://logos-cafe.herokuapp.com//auth/logout', {
+        const {data} = await axios.post('https://logos-cafe.herokuapp.com/auth/logout', {
             email
         })
 
@@ -59,3 +59,18 @@ export const logout = createAsyncThunk('logout', async ({email}: any) => {
         console.log(e);
     }
 })
+
+export const getComments = createAsyncThunk('comment', async ({id}: any) => {
+    try {
+        
+        
+        const {data} = await axios.get<ReviewsTypes[]>(`https://jsonplaceholder.typicode.com/post/${id}/comments`).then(res => res)
+
+        return data  
+           
+         
+    }catch(e) {
+        console.log(e);
+    }
+})
+

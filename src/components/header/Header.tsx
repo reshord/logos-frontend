@@ -8,7 +8,6 @@ import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import store, { RootState } from "../../redux/store";
 import { cartModal } from "../../redux/slices/products";
 import Profile from '../../images/header-image/Profile.png'
-import '../../styles/media.css'
 import cartMedia from '../../images/cards/Buy.png'
 import { logout } from "../../axios";
 
@@ -27,6 +26,7 @@ const Header = () => {
     const [value, setValue] = useState<string>('')
     const [streets, setStreets] = useState<string[]>([])
     const [onInput, setOnInput] = useState<boolean>(false)
+    const [openModal, setOpenModal] = useState<boolean>(true)
     const refHeaderInput = useRef<HTMLInputElement>(null)
     const refHeaderStreet = useRef<HTMLDivElement>(null)
         /* Hooks */
@@ -56,6 +56,10 @@ const Header = () => {
             setOnInput(false)
         }
     }
+    const openMobileModal = () => {
+        console.log('hello');
+        
+    }
 
     useEffect(() => {
         setStreets([
@@ -74,15 +78,27 @@ const Header = () => {
 
     return (
         <div className={styles.header} onClick={(e) => closeStreet(e)}>
-            <div className={styles.menu}>menu</div>
+            <div className={styles.menu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div className="logo">
                 <Link to={'/'} className={styles.logoName}>LOGOS</Link>
             </div>
-            <div className={styles.cartMedia}>
-                <img className={styles.cartMediaImg} src={cartMedia} alt="" />
-                <span>корзина</span>
-            </div>
-            <div className="search"  >
+            {productsCart.length > 0 
+            ? <Link to={'/cart'}>
+                <div className={styles.cartMedia}>
+                    <img className={styles.cartMediaImg} src={cartMedia} alt="" />
+                    <span>Корзина</span>
+                </div>
+            </Link> 
+            : <div className={styles.cartMedia} onClick={() => cartEmpty()}>
+                    <img className={styles.cartMediaImg} src={cartMedia} alt="" />
+                    <span>Корзина</span>
+                </div>}
+            
+            <div className={styles.deliverySearch}>
                 <img className={styles.deliveryAddressLocation} src={Location}></img>
                 <input onChange={(e) => setValue(e.target.value)} 
                        className={styles.deliveryAddress} 
@@ -92,10 +108,10 @@ const Header = () => {
                        value={value}
                        ref={refHeaderInput}/>
                 <img className={styles.search} src={Search} alt="" />
-                {onInput && (
+                {value && (
                     <div className={styles.streets}>
                         {filterStreets.map((el, index) => 
-                            <div  key={index} className={styles.street}>
+                            <div key={index} className={styles.street}>
                                 <span>{el}</span>
                             </div>
                         )}
@@ -116,20 +132,20 @@ const Header = () => {
             </div>
             {productsCart.length > 0 
             ? (
-                <>
+            <div className={styles.blockCartAuth}>
                 <div className={styles.auth}>
                     <img className={styles.authImg} src={Profile} alt="" />
                     {data 
                         ? <span onClick={() => headerLogout()}>Выйти</span> 
-                        : <Link to={'/auth'}><span>Вход/Регистрация</span></Link>}
+                        : <Link to={'/auth'}><span>Вход / Регистрация</span></Link>}
                 </div>
-                <Link to={'/cart'}>
-                <div className={styles.cart}>
-                    <b>Корзина</b>
-                    <span className={styles.cartCounter}>{productsCart.length}</span>
-                </div>
-            </Link>
-            </>
+                        <Link to={'/cart'}>
+                            <div className={styles.cart}>
+                                <b>Корзина</b>
+                                <span className={styles.cartCounter}>{productsCart.length}</span>
+                            </div>
+                        </Link>
+            </div>
             ) 
             : (
                 <div onClick={() => cartEmpty()} className={styles.cart}>

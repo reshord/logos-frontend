@@ -16,7 +16,6 @@ const filtersProd: Array<string> = [
 const HeaderContent = () => {
     const blockWidth = useRef<HTMLDivElement>(null)
     const [activeFilter, setActiveFilter] = useState<number>(0)
-    const [width, setWidth] = useState<number | undefined>(0)
 
 
     useEffect(() => {

@@ -1,11 +1,14 @@
-.cartModalBody {
+.modal {
     height: 100%;
     width: 100%;
-    position: fixed;
-    top: 200px;
-    left: 520px;
-    z-index: 5;
 
+}
+
+.cartModalBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .cartModal {
@@ -14,7 +17,9 @@
     height: 348px;
     color: white;
     border-radius: 10px;
-
+    position: fixed;
+    z-index: 5;
+    top: 200px;
 }
 
 .cartEmpty {
@@ -55,3 +60,57 @@
     cursor: pointer;
 }
 
+@media (max-width: 1295px) {
+    .cartModal {
+        width: 400px;
+    }
+}
+@media (max-width: 760px) {
+    .cartModal {
+        width: 330px;
+        height: 320px;
+    }
+    .cartEmpty span {
+        font-size: 18px;
+    }
+    .cartImg {
+        width: 70px;
+        height: 70px;
+    }
+    .cartModal {
+        top: 300px;
+    }
+}
+@media (max-width: 465px) {
+    .cartModal {
+        width: 300px;
+        height: 300px;
+    }
+    .cartEmpty span {
+        font-size: 18px;
+    }
+    .cartImg {
+        width: 70px;
+        height: 70px;
+    }
+    .cartModal {
+        top: 300px;
+    }
+}
+@media (max-width: 412px) {
+    .cartModal {
+        width: 290px;
+        height: 290px;
+    }
+    .cartEmpty span {
+        font-size: 18px;
+    }
+    .cartImg {
+        width: 70px;
+        height: 70px;
+    }
+    .cartModal {
+        top: 300px;
+        left: 65px;
+    }
+}

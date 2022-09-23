@@ -10,11 +10,13 @@ import Cart from './components/Cart/Cart';
 import DeliveryPage from './components/Delivery/DeliveryPage';
 import ProdInfo from './components/ProdInfo/ProdInfo';
 import AuthModal from './components/modals/AuthModal';
+import './styles/index.css'
 
 const rootStyle = document.querySelector('body') as HTMLElement
-rootStyle.style.margin = '0px'
-rootStyle.style.overflowX = 'hidden'
-rootStyle.style.background = 'linear-gradient(360deg, #211F20 0%, #44403F 100%)'
+        rootStyle.style.margin = '0'
+        rootStyle.style.overflowX = 'hidden'
+        rootStyle.style.background = 'linear-gradient(360deg, #211F20 0%, #44403F 100%)'
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

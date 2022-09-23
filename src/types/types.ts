@@ -21,12 +21,19 @@ export type orderProd = {
     price: number
 }
 
+
 export interface FieldValues {
     email?: string
     password?: string | number
     confirmPassword?: string | number,
 }
-
+export interface ReviewsTypes {
+    email?: string
+    id?: number
+    name?: string,
+    body?: string,
+    params?: number
+}
 export type PayloadData = {
     payload: {
         message: string

@@ -18,7 +18,8 @@ const CartModal = () => {
 
 
     return (
-        <div className={style.cartModalBody}>
+        <div className={style.modal}>
+            <div className={style.cartModalBody}>
             <div className={style.cartModal}>
                     <img onClick={() => closeCartModal()} className={style.cartClose} src={closeModal} alt="" />
                     <div className={style.cartEmpty}>
@@ -27,6 +28,7 @@ const CartModal = () => {
                         <button onClick={() => closeCartModal()} className={style.cartBtn}>Посмотреть меню</button>
                     </div>
             </div>  
+        </div>
         </div>
     )
 }

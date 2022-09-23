@@ -70,4 +70,81 @@
     font-weight: 700;
 }
 
+.reviews {
+    width: 20%;
+    margin: 0 auto;
+}
+.someReviews {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.reviews p {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+
+.block {
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    width: 400px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+}
+
+.prodInfoPrice img {
+    position: relative;
+    right: 160px;
+    top:5px;
+    width: 20px;
+}
+
+.addReview {
+    margin-bottom: 30px;
+}
+
+.btn {
+    cursor: pointer;
+} 
+
+.addReview input {
+    width: 210px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 18px;
+    background: rgba(80, 75, 74, 1);
+    border: none;
+}
+
+.commentatorEmail {
+    font-size: 20px;
+}
+
+.block div {
+    margin-bottom: 15px;
+    color: white;
+    padding: 10px;
+}
+
+.addReviewBtn {
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    height: 50px;
+    width: 150px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.addReview {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
 /* border-right: 1px solid rgba(255, 255, 255, 0.3); */

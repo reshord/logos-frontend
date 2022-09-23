@@ -23,7 +23,7 @@ const AboutUsGPS = () => {
                     <div className={style.contactsEmail}>
                         <img className={style.message} src={Message} alt="" />
                         <div className={style.ourEmail}>
-                            <span>Наша почта: </span>
+                            <span>Наша почта: ourcafe@gmail.com</span>
                         </div>
                     </div>
                 </div>

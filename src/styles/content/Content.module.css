@@ -426,14 +426,169 @@
     background: linear-gradient(90deg, #494544 100%, #504B4A 100%);
 }
 
+@media (max-width: 663px) {
+    .contacts {
+        left: 70px;
+    }
+}
+@media (max-width: 580px) {
+    .contacts {
+        left: 30px;
+    }
+}
+@media (max-width: 550px) {
+    .contacts {
+        width: 500px;
+        left: 25px;
+    }
+}
+@media (max-width: 530px) {
+    .contacts {
+        width: 470px;
+        left: 30px;
+    }
+    .number span {
+        font-size: 16px;
+    }
+    .contactsBtn {
+        width: 150px;
+        font-size: 13px;
+    }
+    .authModalContent input {
+        width: 300px;
+        margin-bottom: 20px;
+
+    }
+    .authHeader {
+        margin-left: 60px;
+    }
+    .authBtn {
+        margin-left: 20px;
+    }
+    .authModalContent {
+        width: 320px;
+        align-items: center;
+    }
+    
+}
+@media (max-width: 486px) {
+    .contacts {
+        width: 450px;
+        left: 15px;
+    }
+    .number span {
+        font-size: 10px;
+    }
+    .contactsBtn {
+        width: 150px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 457px) {
+    .contacts {
+        width: 415px;
+        left: 20px;
+    }
+    .number span {
+        font-size: 15px;
+    }
+    .contactsBtn {
+        width: 130px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 436px) {
+    .contacts {
+        width: 395px;
+    }
+    .number span {
+        font-size: 15px;
+    }
+    .contactsBtn {
+        width: 130px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 422px) {
+    .contacts {
+        width: 390px;
+        left: 13px;
+    }
+    .number span {
+        font-size: 15px;
+    }
+    .contactsBtn {
+        width: 130px;
+        font-size: 12px;
+    }
+}
 
 
-
-@media (max-width: 375px) {
+@media (max-width: 397px) {
     .content {
-        width: 600px;
+        width: 390px;
     }
     .contentCards {
         width: 600px;
+    }
+    .gps {
+        width: 390px;
+    }
+    .contacts {
+        width: 365px;
+        left: 13px;
+    }
+    .contactsTitle {
+        font-size: 20px;
+    }
+    .number {
+        width: 150px;
+    }
+    .number span {
+        font-size: 15px;
+    }
+    .contactsBtn {
+        width: 130px;
+        font-size: 10px;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+    .contactsNumber {
+        width: 350px;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 376px) {
+    .content {
+        width: 100%;
+    }
+    .contentCards {
+        width: 300px;
+    }
+    .gps {
+        width: 375px;
+    }
+    .contacts {
+        width: 350px;
+        left: 13px;
+    }
+    .contactsTitle {
+        font-size: 20px;
+    }
+    .number {
+        width: 150px;
+    }
+    .number span {
+        font-size: 15px;
+    }
+    .contactsBtn {
+        width: 130px;
+        font-size: 10px;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+    .contactsNumber {
+        width: 350px;
+        justify-content: space-around;
     }
 }

@@ -71,8 +71,8 @@ const AuthModal: React.FC = () => {
                             <input {...register('email', {
                                 required: true
                             })} className={styles.email} 
-                                type="text" 
-                                placeholder="Email"/>
+                                type="email" 
+                                placeholder="example@gmail.com"/>
                             <input {...register('password', {
                                 required: true
                             })} className="password" 
@@ -92,7 +92,7 @@ const AuthModal: React.FC = () => {
                                         required: true
                                     })} className={styles.email} 
                                     type="text" 
-                                    placeholder="Email"/>
+                                    placeholder="example@gmail.com"/>
                                 <input {...register('password', {
                                         required: true
                             })} className="password" 
