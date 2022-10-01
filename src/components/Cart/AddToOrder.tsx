@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { pushArr } from "../../redux/slices/products";
 import { orderProd } from "../../types/types";
 
-const AddToOrder: React.FC<CardInfo> = ({image, title, price, id, count, weight, description}) => {
+const AddToOrder: React.FC<CardInfo> = ({image, title, price, id, count, weight, description, popular}) => {
     const dispatch = useAppDispatch()
 
     const addProdToOrder = (data: orderProd) => {
@@ -17,7 +17,7 @@ const AddToOrder: React.FC<CardInfo> = ({image, title, price, id, count, weight,
             
             <img className={styles.orderImg} src={image} alt="" />
             <span>{title}</span>
-            <div onClick={() => addProdToOrder({image, title, price, id, count, weight, description})} className={styles.add}>
+            <div onClick={() => addProdToOrder({image, title, price, id, count, weight, description, popular})} className={styles.add}>
                 <p>Добавить</p>
                 <span>+</span> 
             </div>

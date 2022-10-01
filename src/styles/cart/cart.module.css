@@ -6,6 +6,7 @@
 .cart {
     width: 100%;
     margin-bottom: 70px;
+    padding-top: 50px;
 }
 
 .cartHeader {
@@ -399,6 +400,9 @@ a {
     .summ p {
         font-size: 14px;
     }
+    .prodPrice {
+        font-size: 15px;
+    }
 }
 @media (max-width: 413px) {
     .cartProd {
@@ -457,7 +461,7 @@ a {
         width: 1000px;
     }
     .orderBtn {
-        width: 150px;
+        width: 130px;
     }
     .cartProd {
         width: 340px;

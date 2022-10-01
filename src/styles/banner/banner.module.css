@@ -2,7 +2,7 @@
     width: 99.9%;
     height: 485px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-image: url(../../images/banner/banner.png);
 }
 
@@ -80,13 +80,14 @@
         overflow-x: hidden;
         height: 150px;
     }
+    
 }
 @media (max-width: 430px) {
     .banner {
         width: 100%;
-        background-size: 100%;
+        background-size: 130%;
         overflow-x: hidden;
-        height: 130px;
+        height: 180px;
     }
 }
 @media (max-width: 374px) {

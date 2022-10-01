@@ -11,6 +11,7 @@ import DeliveryPage from './components/Delivery/DeliveryPage';
 import ProdInfo from './components/ProdInfo/ProdInfo';
 import AuthModal from './components/modals/AuthModal';
 import './styles/index.css'
+import NotificationProdvider from './components/customs-hooks/Notifications/NotificationProvider';
 
 const rootStyle = document.querySelector('body') as HTMLElement
         rootStyle.style.margin = '0'
@@ -27,11 +28,11 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <Routes>
-          <Route path='/' element={<App />}></Route>
-          <Route path='/cart' element={<Cart />}></Route>
-          <Route path='/infoProduct/:id' element={<ProdInfo />}/>
+          <Route path='/' element={<App />} />
           <Route path='/auth' element={<AuthModal />}/>
-          <Route path='/delivery' element={<DeliveryPage />}></Route>
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/infoProduct/:id' element={<ProdInfo />}/>
+          <Route path='/delivery' element={<DeliveryPage />} />
         </Routes>
       </Provider>
     </BrowserRouter>

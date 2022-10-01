@@ -40,7 +40,6 @@ const Cart: React.FC = () => {
     return (
         <div className={styles.cartPage}>
             <Header />
-            <HeaderContent />
                 <div className={styles.cart}>
                     <div className={styles.cartHeader}>
                         <img className={styles.headerArrow} src={Arrow} alt="" />

@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import AboutUsImage from '../../images/about-us/AboutUs.png'
 import styles from '../../styles/about-us/aboutUs.module.css'
 import Group from '../../images/about-us/Group.png'
 import Vector from '../../images/about-us/Vector.png'
 import Coocks from '../../images/about-us/Coocks.png'
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
+
+
+    const scrollTop = () => {
+        const app = document.querySelector('.App_App__oD3Wv')
+        
+        
+    }
+
     return (
         <div className={styles.aboutUs}>
             <div className={styles.aboutKafeInfo}>
                 <span className={styles.title}>НАШЕ КАФЕ</span>
                 <p>Мы расположены в одном из самых живописных мест <br /> города — на берегу реки, это ваш оазис в черте города,<br /> куда можно сбежать от шумного и пыльного мегаполиса.<br /> Мы, действительно уникальные, ведь все продумано до <br />мелочей: проект построен из дикого закарпатского сруба,<br /> камин в основном зале ресторана и панорамные окна с<br /> видом на реку, уютные беседки на берегу реки и лучшая <br />видовая террасса, шатер с посадкой на 200 человек,<br /> сказочный детский домик и бассейн.</p>
-                <button className={styles.btn}>Посмотреть меню</button>
+                <button onClick={() => scrollTop()} className={styles.btn}>Посмотреть меню</button>
             </div>
             <div className={styles.aboutKafeBlocks}>
                 <div className="freshest_products">
@@ -26,10 +35,12 @@ const AboutUs = () => {
                     <img className={styles.aboutImg} src={Coocks} alt="" />
                     <span>Лучшие повара</span>
                 </div>
+                <Link to={'/auth'}>
                 <div className="freshest_products">
                     <img className={styles.aboutImg} src={Group} alt='' />
                     <span>Свежайшие продукты</span>
                 </div>
+                </Link>
             </div>
         </div>
 

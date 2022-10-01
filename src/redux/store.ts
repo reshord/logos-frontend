@@ -3,13 +3,15 @@ import addProdToCart from "./slices/products";
 import auth from "./slices/auth";
 import allProducts from "./slices/allProducts";
 import comments from "./slices/addComment";
+import activeModals from "./slices/activeModals";
 
 const store = configureStore({
     reducer: {
         addProdToCart,
         auth,
         allProducts,
-        comments
+        comments,
+        activeModals
     }
 })
 

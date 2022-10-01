@@ -1,5 +1,4 @@
 import React from "react";
-// import BannerAd from '../../images/banner/banner.png'
 import styles from '../../styles/banner/banner.module.css'
 
 const Banner = () => {

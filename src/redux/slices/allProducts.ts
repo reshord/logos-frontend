@@ -16,7 +16,15 @@ const allProducts = createSlice({
     name: 'allProducts',
     initialState,
     reducers: {
-        
+        filterCardsPopular: (state) => {
+            state.products = [...state.products.sort((a, b) => a.popular - b.popular)]
+        },
+        filterCardsPriceLess: (state) => {
+            state.products = [...state.products.sort((a, b) => a.price - b.price)]
+        },
+        filterCardsPriceMore: (state) => {
+            state.products = [...state.products.sort((a, b) => b.price - a.price)]
+        }
     },
     extraReducers: {
         [addProducts.pending.toString()]: (state: initialStateProducts) => {
@@ -31,6 +39,8 @@ const allProducts = createSlice({
         }
     }
 })
+
+export const { filterCardsPopular, filterCardsPriceLess,  filterCardsPriceMore} = allProducts.actions
 
 
 export default allProducts.reducer

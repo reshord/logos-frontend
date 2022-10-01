@@ -11,6 +11,7 @@ import styles from '../../styles/ProdInfo/prodInfo.module.css'
 import cart from '../../images/Cart.png'
 import { getComments,  } from "../../axios";
 import {addCommentToList} from "../../redux/slices/addComment";
+import ScrollTopButton from "../ScrollTop";
 
 
 const ProdInfo: React.FC = () => {
@@ -53,7 +54,6 @@ const ProdInfo: React.FC = () => {
     return (
         <>
         <Header />
-        <HeaderContent />
         <div className={styles.prodInfo}>
             <div className="prodInfoImage">
                 <img className={styles.prodImg} src={product?.image} alt="" />
@@ -67,7 +67,7 @@ const ProdInfo: React.FC = () => {
                         <span className={styles.weight}>Вес: {product?.weight} г</span>
                         <div className={styles.prodInfoPrice}>
                             <button className={styles.btn}>
-                                Корзина
+                                В корзину
                             </button>
                             <img src={cart} alt="" />
                             <span className={styles.price}>{product?.price} ₽</span>
@@ -83,7 +83,7 @@ const ProdInfo: React.FC = () => {
             <p>Отзывы</p>
             <div className={styles.someReviews}>
                 {AllComments?.map(el => 
-                    <div className={styles.block}>
+                    <div key={el.id} className={styles.block}>
                         <div className={styles.commentatorEmail}>{el.email}</div>
                         <div className={styles.commentBody}>{el.body}</div>
                     </div>
@@ -100,6 +100,7 @@ const ProdInfo: React.FC = () => {
             </div>
         </div>
         }
+        <ScrollTopButton />
         <Footer />
        </>
     )

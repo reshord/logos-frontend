@@ -29,7 +29,23 @@
     z-index: 2;
     margin-bottom: 30px;
     background: #403C3B;
+    overflow-x: hidden;
 
+}
+
+.blockFilterMenu span {
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 40px;
+}
+.blockFilterMenu span:hover {
+    opacity: 0.6;
+}
+
+.blockFilterMenu {
+    width: 700px;
 }
 
 .dragBlock {
@@ -56,6 +72,13 @@
     .headerContent {
         overflow-x: hidden;
         display: block;
+    }
+}
+
+@max
+
+@media (max-width: 400px) {
+    .headerContent {
     }
 }
 

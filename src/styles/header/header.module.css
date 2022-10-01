@@ -4,7 +4,6 @@
     align-items: center;
     height: 99px;
     width: 100%;
-    box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: sticky;
     top: 0px;
@@ -41,13 +40,13 @@
     width: 555px;
     height: 52px;
     border-radius: 10px;
-    padding-left: 45px;
+    padding: 0px 0px 0px 45px;
     font-size: 18px;
     background: rgba(80, 75, 74, 1);
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
-    border: black;
+    border: none;
     color: white;
 }
 
@@ -372,6 +371,8 @@
     }
     .deliverySearch {
         width: 500px;
+        margin-left: 30px;
+        margin-bottom: 20px;
     }
     .auth {
         display: none;
@@ -406,6 +407,13 @@
     }
 
 }
+
+@media (max-width: 548px) {
+    .deliveryAddress {
+        width: 150px;
+    } 
+}
+
 @media (max-width: 540px) {
     .header {
         display: flex;
@@ -432,6 +440,18 @@
     }
 
 }
+
+@media (max-width: 532px) {
+    .deliveryAddress {
+        margin-left: 10px;
+        margin-bottom: 30px;
+    }
+    .deliveryAddressLocation {
+        top: 60px;
+        left: 18px;
+    }
+}
+
 @media (max-width: 514px) {
     .deliveryAddress {
         padding-left: 40px;
@@ -448,13 +468,15 @@
 }
 @media (max-width: 503px) {
     .deliveryAddress {
-        padding-left: 15px;
+        padding-left: 10px;
+        margin: 20px 0px 0px 0px;
     }
     .deliveryAddressLocation {
         display: none;
     }
     .deliverySearch {
         width: 160px;
+        margin: 0px 0px 20px 0px;
     }
     .streets {
         width: 160px;
@@ -468,6 +490,12 @@
         font-size: 12px;
     }
 }
+
+/* @media (max-width: 465px) {
+    .header {
+        width: 465px;
+    }
+} */
 
 @media (max-width: 456px) {
     .header {
@@ -516,21 +544,32 @@
 }
 
 
-@media (max-width: 442px) {
+@media (max-width: 447px) {
     .header {
-        width: 442px;
+        width: 446px;
+    }
+}
+
+@media (max-width: 435px) {
+    .header {
+        width: 434px;
     }
 }
 
 @media (max-width: 422px) {
     .header {
-        width: 421px;
+        width: 422px;
     }
 }
 
 @media (max-width: 417px) {
     .header {
-        width: 415px;
+        width: 416px;
+    }
+}
+@media (max-width: 406px) {
+    .header {
+        width: 403px;
     }
 }
 
@@ -539,7 +578,7 @@
         display: flex;
         flex-wrap: wrap;
         height: 100px;
-        width: 390px;
+        width: 397px;
     }
     .cartMedia {
         display: block;

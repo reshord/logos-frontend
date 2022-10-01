@@ -5,7 +5,8 @@ export type CardInfo = {
     count: number,
     description: string,
     weight: string,
-    price: number
+    price: number,
+    popular: number
 }
 export type LogoutType = {
     email: string,
@@ -18,7 +19,8 @@ export type orderProd = {
     count: number,
     description: string,
     weight: string,
-    price: number
+    price: number,
+    popular: number
 }
 
 

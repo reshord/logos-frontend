@@ -9,7 +9,7 @@ import { updatePriceProd } from "../../../redux/slices/products";
 import { Link } from "react-router-dom";
 
 
-const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight, price}) => {
+const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight, price, popular}) => {
     const dispatch = useAppDispatch()
     const {addProdToCart} = useAppSelector<RootState>(store.getState)
     const {productsCart, isLoading, cartOpen, prodInCart, prodId } = addProdToCart
@@ -46,7 +46,7 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
         dispatch(updatePriceProd({id, totalCount}))
     }
 
-    const checkProd = (data: CardInfo) => {
+    const addToCart = (data: CardInfo) => {
         dispatch(pushArr(data))
         dispatch(productInCart(data.id))
     }
@@ -86,13 +86,14 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
                 : (
                     <>
                     <span className={styles.cardPrice}>{price} ₽</span>
-                        <button onClick={() => checkProd({id,
+                        <button onClick={() => addToCart({id,
                                                         image, 
                                                         title, 
                                                         count,
                                                         description, 
                                                         weight, 
-                                                        price})} 
+                                                        price,
+                                                        popular})} 
                             className={styles.btn}>В корзину</button>
                         <img className={styles.buy} src={buy} alt="" />  
                     </>

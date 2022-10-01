@@ -6,6 +6,7 @@ import facebook from '../../images/about-us/facebook.png'
 import instagram from '../../images/about-us/instagram.png'
 import vkontakte from '../../images/about-us/vkontakte-logo.png'
 import youtube from '../../images/about-us/youtube.png'
+import { Link } from "react-router-dom";
 
 const AboutUsGPS = () => {
     return (
@@ -30,13 +31,15 @@ const AboutUsGPS = () => {
                 <div className={style.contactsNumber}>
                     <button className={style.contactsBtn}>ЗАБРОНИРОВАТЬ СТОЛ</button>
                     <div className={style.number}>
-                        <span>+7 (917) 510-57-59</span>
+                        <span>+380 510 57 59</span>
                         <p>Звоните или оставляйте заявку</p>
                     </div>
                 </div>
                 <div className={style.footer}>
                     <span>Мы в соц сетях: </span>
+                    <Link to={'/auth'}>
                     <img className={style.footerImg} src={facebook} alt="" />
+                    </Link>
                     <img className={style.footerImg} src={vkontakte} alt="" />
                     <img className={style.footerImg} src={youtube} alt="" />
                     <img className={style.footerImg} src={instagram} alt="" />

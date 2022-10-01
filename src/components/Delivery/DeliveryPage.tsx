@@ -5,6 +5,7 @@ import HeaderContent from "../content/HeaderContent";
 import Footer from "../Footer/Footer";
 import Header from "../header/Header";
 import TimeOut from "./TimeOut";
+import arrow from '../../images/header-image/Arrow.png'
 
 const DeliveryPage = () => {
                             /* Hooks */
@@ -22,12 +23,14 @@ const DeliveryPage = () => {
 return (
     <>
     <Header />
-    <HeaderContent />
         <div className={styles.DeliveryPage}>
             <Link to={'/cart'}>
-                <span className={styles.toCart}>
-                    в корзину
-                </span>
+                <div className={styles.deliveryBlock}>
+                    <img src={arrow} alt="" />
+                    <span className={styles.toCart}>
+                        в корзину
+                    </span>
+                </div>
             </Link>
             <span className={styles.deliveryTitle}>
                 ОФОРМЛЕНИЕ ЗАКАЗА
@@ -95,7 +98,7 @@ return (
             </div>
             <div className={styles.timeOfDelivery}>
                 <div className={styles.timeOfDeliveryTitle}>4. Когда доставить</div>
-                <div style={{display: 'flex', alignItems: 'center'}}>
+                <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
                     <div className={styles.timeOfDeliveryOption}>
                     {timeOfDeliveryOptions.map((el, index) => 
                             <div key={index} className={timeOfDelivery === index 

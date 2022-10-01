@@ -6,8 +6,9 @@ import closeModal from '../../images/header-image/closeModal.png'
 import cartEmpty from '../../images/header-image/cartEmpty.png'
 import { cartModal } from "../../redux/slices/products";
 import { useNavigate } from "react-router-dom";
+import { ArrowFunction } from "typescript";
 
-const CartModal = () => {
+const CartModal: React.FC = () => {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
 

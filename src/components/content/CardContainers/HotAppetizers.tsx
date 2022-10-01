@@ -12,10 +12,10 @@ import { CardInfo } from "../../../types/types";
 
 type ColdCardType = {
     title: string,
-    coldAppetizers: Ref<HTMLDivElement>,
+    hotAppetizers: Ref<HTMLDivElement>,
 }
 
-const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetizers}) => {
+const HotAppetizers: React.FC<ColdCardType> = React.memo(({title, hotAppetizers}) => {
     const carousel = useRef<HTMLDivElement>(null)
 
     const dispatch = useAppDispatch()
@@ -35,7 +35,7 @@ const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetize
     }, []);
     
     return (
-        <motion.div ref={coldAppetizers} className={styles.ContentCardBlock}>
+        <motion.div ref={hotAppetizers} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
@@ -49,4 +49,4 @@ const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetize
     )
 })
 
-export default ContenCardBlock
+export default HotAppetizers

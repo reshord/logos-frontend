@@ -12,13 +12,12 @@ import { CardInfo } from "../../../types/types";
 
 type ColdCardType = {
     title: string,
-    coldAppetizers: Ref<HTMLDivElement>,
+    meatDishes: Ref<HTMLDivElement>,
 }
 
-const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetizers}) => {
+const MeatDishes: React.FC<ColdCardType> = React.memo(({title, meatDishes}) => {
     const carousel = useRef<HTMLDivElement>(null)
 
-    const dispatch = useAppDispatch()
     const [offsetWidth, setOffsetWidth] = useState<number | undefined>()
     const [scrollWidth, setScrollWidth] = useState<number | undefined>()
     const {addProdToCart, allProducts} = useAppSelector<RootState>(store.getState)
@@ -28,14 +27,11 @@ const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetize
 
     useEffect(() => {
         setOffsetWidth(carousel.current?.offsetWidth);
-
         setScrollWidth(carousel.current?.scrollWidth);
-        console.log(carousel.current);
-        
     }, []);
     
     return (
-        <motion.div ref={coldAppetizers} className={styles.ContentCardBlock}>
+        <motion.div ref={meatDishes} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
@@ -49,4 +45,4 @@ const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetize
     )
 })
 
-export default ContenCardBlock
+export default MeatDishes

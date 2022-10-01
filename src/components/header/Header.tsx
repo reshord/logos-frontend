@@ -10,6 +10,7 @@ import { cartModal } from "../../redux/slices/products";
 import Profile from '../../images/header-image/Profile.png'
 import cartMedia from '../../images/cards/Buy.png'
 import { logout } from "../../axios";
+import { activeAdaptiveModal } from "../../redux/slices/activeModals";
 
 const Header = () => {
         /* Redux Toolkit */ 
@@ -44,7 +45,6 @@ const Header = () => {
             const {email} = data
             dispatch(logout(email))
         }
-        return
     }
 
     const filterStreets = streets.filter(street => {
@@ -57,8 +57,7 @@ const Header = () => {
         }
     }
     const openMobileModal = () => {
-        console.log('hello');
-        
+        dispatch(activeAdaptiveModal())
     }
 
     useEffect(() => {
@@ -78,7 +77,7 @@ const Header = () => {
 
     return (
         <div className={styles.header} onClick={(e) => closeStreet(e)}>
-            <div className={styles.menu}>
+            <div className={styles.menu} onClick={() => openMobileModal()}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -127,7 +126,7 @@ const Header = () => {
                 </div>
                 <div className={styles.contactsNumber}>
                     <span>Контакты: </span> <br />
-                    <b>+7 (917) 510-57-59</b>
+                    <b>+380 510 57 59</b>
                 </div>
             </div>
             {productsCart.length > 0 
