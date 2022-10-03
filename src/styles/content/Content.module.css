@@ -1,7 +1,8 @@
 /* Content */
 
 .content {
-    width: 100%;
+    width: 100vw;
+    height: 100%;
 }
 
 .contentTitle span {
@@ -50,6 +51,21 @@
     border-radius: 10px;
     margin-left: 20px;
     cursor: grab;
+    position: relative;
+}
+
+.countProd {
+    background-color: #79B382;;
+    color: white;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
 }
 
 .cardInfo {
@@ -111,7 +127,7 @@ form {
     opacity: 0.4;
     font-size: 13px;
     font-weight: 400;
-    width: 190px;
+    width: 180px;
     height: 30px;
     margin-top: 6px;
 }
@@ -178,8 +194,16 @@ form {
 
 .gps {
     background-image: url('../../images/about-us/GPS.png');
-    width: 100%;
-    height: 664px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 690px;
+    position: relative;
+}
+
+.weAreHere {
+    position: absolute;
+    top: 410px;
+    right: 330px;
 }
 
 .contacts {
@@ -411,7 +435,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -576,11 +600,12 @@ form {
 }
 
 .method span {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .filtered {
     color: white;
+    font-size: 10px;
 }
 
 .sortMethodActive {
@@ -654,8 +679,28 @@ form {
     background: linear-gradient(90deg, #494544 100%, #504B4A 100%);
 }
 
-@media (max-width: 1177px) {
-
+@media (max-width: 1447px) {
+    .gps {
+        background-size: cover;
+        height: 1000px;
+    }
+    
+}
+@media (max-width: 1307px) {
+    .gps {
+        background-size: cover;
+        height: 1000px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
+}
+@media (max-width: 1007px) {
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
 }
 
 @media (max-width: 969px) {
@@ -672,6 +717,10 @@ form {
         overflow-x: hidden;
         display: block;
     }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
 }
 
 
@@ -683,10 +732,15 @@ form {
     .blockFilterMenu div {
         font-size: 20px;
     }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
 }
 @media (max-width: 685px) {
     .blockFilterOption {
-        margin: 0px 20px 50px 50px;
+        margin-bottom: 40px;
+        padding-left: 15px;
     }
     .optionFilter {
         margin-left: 100px;
@@ -695,6 +749,30 @@ form {
         display: flex;
         flex-direction: column;
     }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
+}
+
+@media (max-width: 456px) {
+    .gps{
+    }
+}
+@media (max-width: 400px) {
+    .method  {
+        width: 350px;
+    }
+}
+@media (max-width: 384px) {
+    .optionFilter span {
+        font-size: 16px;
+    }
+}
+@media (max-width: 362px) {
+    .optionFilter span {
+        font-size: 14px;
+    }
 }
 
 
@@ -702,18 +780,18 @@ form {
     .headerContent {
         width: 375px;
         overflow-x: hidden;
-        height: 60px;
-        margin-bottom: 30px;
+        height: 80px;
     }
     .headerContent span {
         font-size: 14px;
     }
     .dragBlock {
-        height: 55px;
+        height: 85px;
     }
     .dragBlock span {
         margin-right: 20px;
     }
+
 }
 
 @media (max-width: 663px) {
@@ -721,21 +799,49 @@ form {
         height: 80px;
         padding-bottom: 10px;
     }
+    .dragBlock {
+        height: 70px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
 }
 @media (max-width: 623px) {
     .contacts {
         left: 70px;
     }
 }
+@media (max-width: 631px) {
+    .dragBlock {
+        height: 65px;
+    }
+    .headerContent {
+        height: 90px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
+}
 @media (max-width: 580px) {
     .contacts {
         left: 30px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
     }
 }
 @media (max-width: 550px) {
     .contacts {
         width: 500px;
         left: 25px;
+        
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
     }
 }
 @media (max-width: 530px) {
@@ -746,8 +852,11 @@ form {
     .number span {
         font-size: 16px;
     }
+    .contactsNumber {
+        width: 90%;
+    }
     .contactsBtn {
-        width: 150px;
+        width: 200px;
         font-size: 13px;
     }
     .authModalContent input {
@@ -768,6 +877,10 @@ form {
     .showValue {
         left: 280px;
     }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
     
 }
 @media (max-width: 486px) {
@@ -776,7 +889,11 @@ form {
         left: 15px;
     }
     .number span {
-        font-size: 10px;
+        font-size: 16px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
     }
     .contactsBtn {
         width: 150px;
@@ -785,31 +902,60 @@ form {
 }
 @media (max-width: 463px) {
     .contacts {
-        width: 415px;
+        width: 90%;
         left: 20px;
+        height: 100vh;
+        border-radius: 10px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
+    .contactsTitle {
+        text-align: center;
+    }
+    .address {
+        margin-left: 15px;
+    }
+    .ourEmail span {
+        flex-wrap: wrap;
+        width: 100px;
+        margin-left: 10px;
+    }
+    .contactsNumber {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .number {
+        width: 217px;
+        height: 59px;
+        border-radius: 10px;
+        margin-top: 20px;
     }
     .number span {
-        font-size: 15px;
+        font-size: 20px;
     }
     .contactsBtn {
-        width: 130px;
+        width: 217px;
+        height: 59px;
         font-size: 12px;
     }
     .headerContent {
-        z-index: 4;
-        margin-bottom: 20px;
+        z-index: 2;
+        height: 75px;
+    }
+    .dragBlock {
+        height: 60px;
     }
 }
 @media (max-width: 438px) {
     .contacts {
         width: 395px;
     }
-    .number span {
-        font-size: 15px;
-    }
     .contactsBtn {
-        width: 130px;
-        font-size: 12px;
+        font-size: 13px;
+        font-weight: 600;
     }
     .headerContent {
         width: 440px;
@@ -843,11 +989,7 @@ form {
         width: 390px;
         left: 13px;
     }
-    .number span {
-        font-size: 15px;
-    }
     .contactsBtn {
-        width: 130px;
         font-size: 12px;
     }
     .headerContent {
@@ -868,6 +1010,10 @@ form {
     .blockFilterMenu div {
         font-size: 18px;
     }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
+    }
 }
 
 @media (max-width: 397px) {
@@ -878,7 +1024,11 @@ form {
         width: 600px;
     }
     .gps {
-        width: 390px;
+        height: 1200px;
+    }
+    .weAreHere {
+        top: 820px;
+        left: 210px;
     }
     .contacts {
         width: 365px;
@@ -887,22 +1037,11 @@ form {
     .contactsTitle {
         font-size: 20px;
     }
-    .number {
-        width: 150px;
-    }
-    .number span {
-        font-size: 15px;
-    }
     .contactsBtn {
-        width: 130px;
-        font-size: 10px;
         line-height: 1.5;
         font-weight: 600;
     }
-    .contactsNumber {
-        width: 350px;
-        justify-content: space-around;
-    }
+
     .headerContent {
         width: 396px;
     }
@@ -915,25 +1054,18 @@ form {
     .contentCards {
         width: 300px;
     }
-    .gps {
-        width: 375px;
-    }
     .contacts {
         width: 350px;
         left: 13px;
     }
+    .weAreHere {
+        top: 800px;
+        left: 210px;
+    }
     .contactsTitle {
         font-size: 20px;
     }
-    .number {
-        width: 150px;
-    }
-    .number span {
-        font-size: 15px;
-    }
     .contactsBtn {
-        width: 130px;
-        font-size: 10px;
         line-height: 1.5;
         font-weight: 600;
     }
@@ -948,15 +1080,24 @@ form {
 
 @media (max-width: 374px) {
     .headerContent {
-        height: 80px;
+        height: 70px;
+    }
+    .dragBlock {
+        height: 50px;
     }
     .blockFilterMenu {
         margin-bottom: 20px;
     }
 }
-@media (max-width: 354px) {
+@media (max-width: 357px) {
    .optionFilter {
-    width: 200px;
-    margin-left: 55px;
+        width: 150px;
+        margin-left: 55px;
+   }
+   .dragBlock {
+        height: 45px;
+   }
+   .headerContent {
+        height: 75px;
    }
 }

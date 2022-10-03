@@ -1,19 +1,18 @@
 .aboutUs {
-    width: 1000px;
+    width: 90vw;
     margin: 0 auto;
-    padding-bottom: 55px;
     display: flex;
     justify-content: space-between;
-    height: 680px;
+    align-items: center;
+    padding-bottom: 35px;
+    
 }
 
 .aboutKafeInfo {
     background-image: url('../../images/about-us/Rectangle\ 2.png');
     background-size: auto;
-    padding: 60px 60px;
+    padding: 60px;
     max-width: 350px;
-    max-height: 700px;
-    overflow-y: hidden;
 }
 
 .aboutKafeInfo p {
@@ -22,6 +21,7 @@
     font-weight: 400;
     opacity: 0.5;
     line-height: 25px;
+    word-wrap: break-word;
 }
 
 .aboutKafeBlocks {
@@ -86,7 +86,6 @@
     .aboutUs {
         width: 80%;
         margin-bottom: 50px;
-        height: 700px;
     }
     .aboutKafeBlocks {
         margin-top: 0;
@@ -95,13 +94,11 @@
 }
 @media (max-width: 880px) {
     .aboutUs {
-        height: 800px;
     }
 }
 @media (max-width: 836px) {
     .aboutKafeBlocks div {
         width: 100px;
-        height: 100px;
     }
     .aboutKafeBlocks {
         display: none;
@@ -110,7 +107,6 @@
 @media (max-width: 672px) {
     .aboutKafeBlocks div {
         width: 170px;
-        height: 180px;
     }
 }
 
@@ -119,52 +115,33 @@
         display: none;
     }
 }
-@media (max-width: 546px) {
-    .aboutUs {
-        height: 700px;
-    }
-    .aboutKafeInfo {
-        height: 90%;
-    }
+@media (max-width: 553px) {
+
 }
 @media (max-width: 485px) {
-    .aboutUs {
-        height: 800px;
-    }
     .aboutKafeInfo {
-        height: 90%;
     }
 }
 @media (max-width: 460px) {
-    .aboutUs {
-        height: 950px;
-    }
     .contacts {
         width: 400px;
     }
-    
 }
+
 @media (max-width: 425px) {
-    .aboutUs {
-        height: 870px;
-    }
-    
 }
+
 @media (max-width: 410px) {
-    .aboutUs {
-        height: 900px;
-    }
-    
 }
+
 @media (max-width: 395px) {
     .aboutUs {
-        height: 920px;
     }
-    
+    .aboutKafeInfo {
+    }
 }
 @media (max-width: 388px) {
     .aboutUs {
-        height: 950px;
     }
     
 }
@@ -174,7 +151,6 @@
         background-image: none;
         display: block;
         width: 370px;
-        height: 900px;
         left: 0;
 
     }
@@ -193,7 +169,6 @@
         display: none;
     }
     .aboutKafeInfo {
-        height: 691px;
     }
     .aboutKafeInfo span {
         font-size: 20px;

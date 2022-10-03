@@ -14,12 +14,13 @@ import axios from "axios";
 import { cartProdAdvice } from "../../redux/slices/products";
 import { CardInfo } from "../../types/types";
 import { motion } from "framer-motion";
+import { logout } from "../../axios";
 
 const Cart: React.FC = () => {
     const dispatch = useAppDispatch()
     const {addProdToCart, auth} = useAppSelector<RootState>(store.getState)
-    const {productsCart, isLoading, prodAdvice} = addProdToCart
-    const {isAuth} = auth
+    const {productsCart, isLoading, prodAdvice, prodInCart} = addProdToCart
+    const {isAuth, data} = auth
     const navigate = useNavigate()
 
     const summProd = productsCart.reduce((acc, cur) => {
@@ -31,10 +32,14 @@ const Cart: React.FC = () => {
         if(productsCart.length < 1) {
              navigate('/')
         }
-        axios.get<CardInfo[]>('https://dashboard.heroku.com/apps/mern-restaurant-logos/cart ').then(({data}) => {
+        axios.get<CardInfo[]>('https://cafeee-logos.herokuapp.com/cart').then(({data}) => {
             dispatch(cartProdAdvice(data))
         })
-    }, [productsCart]);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }, [prodInCart]);
 
 
     return (
@@ -54,19 +59,17 @@ const Cart: React.FC = () => {
                     <div className="cart-products">
                         {productsCart.map(el => <CartProd key={el.id} {...el}/>)}
                     </div>
-                    <motion.div className={styles.cartFooter}>
+                    <div className={styles.cartFooter}>
                         <div className={styles.cartFooterTitle}>
                             ДОБАВИТЬ К ЗАКАЗУ
                         </div>
-                        <motion.div drag='x' 
-                                    dragConstraints={{right: 0, left: -1200}} 
-                                    className={styles.AddToOrder}>
-                            {prodAdvice.map(el => <AddToOrder key={el.id} {...el}/>)}
-                            {prodAdvice.length === 0 && (
-                                <div>Нет товаров</div>
-                            )}
-                        </motion.div>
-                    </motion.div>
+                            <div  className={styles.AddToOrder}>
+                                {prodAdvice.map(el => <AddToOrder key={el.id} {...el}/>)}
+                                {prodAdvice.length === 0 && (
+                                    <div>Нет товаров</div>
+                                )}
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles.cartProdSumm}>

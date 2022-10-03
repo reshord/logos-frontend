@@ -23,7 +23,6 @@ function App() {
         <AboutUs />
         <AboutUsGPS />
         <Footer />
-        <ScrollTopButton />
     </div>
   );
 }

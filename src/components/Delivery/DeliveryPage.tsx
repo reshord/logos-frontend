@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from '../../styles/delivery/delivery.module.css'
 import HeaderContent from "../content/HeaderContent";
@@ -19,6 +19,13 @@ const DeliveryPage = () => {
           timeOfDeliveryOptions = ['В ближайшее время', 'Ко времени']
 
     let date: string = `${new Date().getHours()}:${new Date().getMinutes()}`
+
+    useEffect(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+    }, []);
 
 return (
     <>

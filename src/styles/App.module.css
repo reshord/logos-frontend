@@ -1,39 +1,52 @@
 .App {
     background-color: #403C3B;
     margin: 0;
+    font-family: 'Noto Sans Mono', monospace;
+
 }
 .body {
     background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
 }
 
 .arrowTop {
-    position: fixed;
-    width: 100px;
-    bottom: 20px;
-    left: 20px;
+    width: 65px;
     z-index: 6;
     cursor: pointer;
-    background: #403C3B;
-    -webkit-box-shadow: 0px 4px 36px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 4px 36px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 4px 36px 0px rgba(0,0,0,0.75);
-    border-radius: 10px;
-    padding: 5px;
+    background: white;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.arrowBlock {
 }
 
 .arrowTop:hover {
     opacity: 0.8;
 }
 
+@media (max-width: 1001px) {
+    .arrowTop {
+        width: 50px;
+    }
+}
+@media (max-width: 501px) {
+    .arrowTop {
+        width: 45px;
+    }
+}
+
 @media (max-width: 410px) {
     .arrowTop{
-        width: 80px;
+        width: 35px;
     }
 }
 
 @media (max-width: 376px) {
     body {
         width: 376px;
+    }
+    .arrowTop {
+        width: 35px;
     }
     .App {
         width: 376px;

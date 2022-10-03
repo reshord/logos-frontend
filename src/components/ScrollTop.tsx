@@ -14,25 +14,15 @@ const ScrollTopButton = () => {
         })
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 400) {
-                setShowButton(true)
-            } else {
-                setShowButton(false)
-            }
-        })
-    }, []);
 
     return (
         <div>
-            {showButton && 
                 <img onClick={() => scrollToTop()} 
                 className={styles.arrowTop} 
                 src={srcollToTop} 
                 alt="" 
                        />
-            }
+        
         </div>
     )
 }

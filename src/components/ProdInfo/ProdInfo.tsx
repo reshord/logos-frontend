@@ -100,7 +100,6 @@ const ProdInfo: React.FC = () => {
             </div>
         </div>
         }
-        <ScrollTopButton />
         <Footer />
        </>
     )

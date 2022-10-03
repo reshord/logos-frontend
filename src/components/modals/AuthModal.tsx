@@ -105,7 +105,7 @@ const AuthModal: React.FC = () => {
                     : (
                         <div className={styles.authModalContent}>
                             <div className={styles.authHeader}>
-                                {authBlock.map((el, index) => <span className={authSide === index ? styles.authActive : styles.auth} onClick={() => setAuthSide(index)}>{el}</span>)}
+                                {authBlock.map((el, index) => <span key={index} className={authSide === index ? styles.authActive : styles.auth} onClick={() => setAuthSide(index)}>{el}</span>)}
                             </div>
                                 <form onSubmit={handleSubmit(onsubmitRegister)}>
                                     <input {...register('email', {

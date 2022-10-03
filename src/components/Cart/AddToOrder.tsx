@@ -16,13 +16,17 @@ const AddToOrder: React.FC<CardInfo> = ({image, title, price, id, count, weight,
         <div className={styles.addProdToOrder}>
             
             <img className={styles.orderImg} src={image} alt="" />
-            <span>{title}</span>
-            <div onClick={() => addProdToOrder({image, title, price, id, count, weight, description, popular})} className={styles.add}>
-                <p>Добавить</p>
-                <span>+</span> 
-            </div>
-            <div className={styles.price}>
-                {price} ₽
+            
+            <div className={styles.blockAddToOrder}>
+                <span>{title}</span>
+                <div onClick={() => addProdToOrder({image, title, price, id, count, weight, description, popular})} 
+                    className={styles.add}>
+                    <p>Добавить</p>
+                    <span>+</span> 
+                </div>
+                <div className={styles.price}>
+                    {price} ₽
+                </div>
             </div>
         </div>
     )

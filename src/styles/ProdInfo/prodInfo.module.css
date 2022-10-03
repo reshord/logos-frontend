@@ -7,6 +7,7 @@
     margin: 0 auto;
     margin-bottom: 40px;
     margin-top: 40px;
+    font-family: 'Noto Sans Mono', monospace;
 }
 
 .prodImg {
@@ -75,6 +76,7 @@
 .reviews {
     width: 20%;
     margin: 0 auto;
+    font-family: 'Noto Sans Mono', monospace;
 }
 .someReviews {
     display: flex;
@@ -110,6 +112,7 @@
 
 .btn {
     cursor: pointer;
+    
 } 
 
 .addReview input {
@@ -143,12 +146,14 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+    
 }
 
 .addReview {
     width: 400px;
     display: flex;
     justify-content: space-between;
+    font-family: 'Noto Sans Mono', monospace;
 }
 
 /* border-right: 1px solid rgba(255, 255, 255, 0.3); */

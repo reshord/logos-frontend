@@ -6,11 +6,12 @@ import facebook from '../../images/about-us/facebook.png'
 import instagram from '../../images/about-us/instagram.png'
 import vkontakte from '../../images/about-us/vkontakte-logo.png'
 import youtube from '../../images/about-us/youtube.png'
-import { Link } from "react-router-dom";
+import weAreHere from '../../images/gps/WeAreHere.png'
 
 const AboutUsGPS = () => {
     return (
         <div className={style.gps}>
+            <img className={style.weAreHere} src={weAreHere} alt="" />
             <div className={style.contacts}>
                 <div className={style.contactsTitle}>КОНТАКТЫ</div>
                 <div className={style.ourContacts}>
@@ -37,9 +38,7 @@ const AboutUsGPS = () => {
                 </div>
                 <div className={style.footer}>
                     <span>Мы в соц сетях: </span>
-                    <Link to={'/auth'}>
                     <img className={style.footerImg} src={facebook} alt="" />
-                    </Link>
                     <img className={style.footerImg} src={vkontakte} alt="" />
                     <img className={style.footerImg} src={youtube} alt="" />
                     <img className={style.footerImg} src={instagram} alt="" />

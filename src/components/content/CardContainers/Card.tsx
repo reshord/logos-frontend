@@ -30,16 +30,19 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
 
 
     const pricePlus = () => {
-        if(totalCount <= totalCount) {
+        if(totalCount <= count) {
             setTotalPrice(totalPrice * totalCount)
         }
         setTotalCount(totalCount + 1)
         setTotalPrice(price * totalCount)
         dispatch(updatePriceProd({id, totalCount}))
+
     }
     const priceMinus = () => {
         if(totalPrice === price) {
             dispatch(deleteProdCart(id))
+            dispatch(updatePriceProd(1))
+            setTotalCount(count)
         }
         setTotalCount(totalCount - 1)
         setTotalPrice(totalPrice - price)
@@ -75,15 +78,14 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
                 </div>
             </div>
             <div className={styles.cardFooter}>
-                {prodInCart && prodId === id
-                ? (
+                
+                {prodInCart.includes(id) ?
                    <div className={styles.productInCart}>
                         <span onClick={() => priceMinus()}>-</span>
                         <div>{totalPrice <= 0 ? price : totalPrice} ₽</div>
                         <span onClick={() => pricePlus()}>+</span>
                    </div>
-                )
-                : (
+                   :
                     <>
                     <span className={styles.cardPrice}>{price} ₽</span>
                         <button onClick={() => addToCart({id,
@@ -97,7 +99,7 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
                             className={styles.btn}>В корзину</button>
                         <img className={styles.buy} src={buy} alt="" />  
                     </>
-                )}
+                }
             </div>
         </div>
     )

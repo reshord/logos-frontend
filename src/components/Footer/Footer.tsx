@@ -1,10 +1,13 @@
 import React from "react";
 import styles from '../../styles/footer/footer.module.css'
+import ScrollTopButton from "../ScrollTop";
 
 const Footer = () => {
     return (
         <div className={styles.footer}>
-            <div className="arrow-top"></div>
+            <div className={styles.arrowBlock}>
+                <ScrollTopButton />
+            </div>
             <div className={styles.infoFooterBlock}>
                 <div className={styles.titleLogo}>LOGOS</div>
                 <span>

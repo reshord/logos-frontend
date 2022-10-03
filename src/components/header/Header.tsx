@@ -19,7 +19,7 @@ const Header = () => {
         /* Redux Toolkit */
 
         /* State */
-    const {productsCart, isLoading, cartOpen} = addProdToCart
+    const {productsCart, prodInCart, isLoading, cartOpen} = addProdToCart
     const {isAuth, data} = auth
         /* State */
 
@@ -50,6 +50,10 @@ const Header = () => {
     const filterStreets = streets.filter(street => {
         return street.toLowerCase().includes(value.toLowerCase())
     })
+
+    const allProdsCount = productsCart.reduce((acc, cur) => {
+        return acc + cur.count
+    }, 0)
 
     const closeStreet = (e: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
         if(e.target !== refHeaderInput.current) {
@@ -129,7 +133,7 @@ const Header = () => {
                     <b>+380 510 57 59</b>
                 </div>
             </div>
-            {productsCart.length > 0 
+            {productsCart.length > 0 && prodInCart.length > 0
             ? (
             <div className={styles.blockCartAuth}>
                 <div className={styles.auth}>
@@ -141,7 +145,7 @@ const Header = () => {
                         <Link to={'/cart'}>
                             <div className={styles.cart}>
                                 <b>Корзина</b>
-                                <span className={styles.cartCounter}>{productsCart.length}</span>
+                                <span className={styles.cartCounter}>{allProdsCount}</span>
                             </div>
                         </Link>
             </div>

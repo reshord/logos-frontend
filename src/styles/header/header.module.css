@@ -335,16 +335,14 @@
         display: none;
     }
     .header {
-        justify-content: space-between;
+        justify-content: space-around;
     }
     .blockCartAuth {
-        width: 280px;
+        width: 330px;
     }
-    .logoName {
-        margin-left: 20px;
-    }
+    
     .deliveryAddress {
-        width: 150px;
+        width: 160px;
     }
     .streets {
         width: 198px;
@@ -355,7 +353,25 @@
     }
 }
 
+@media (max-width: 710px) {
+    .blockCartAuth {
+        width: 300px;
+    }
+    .deliveryAddress {
+        width: 150px;
+    }
+}
+@media (max-width: 660px) {
+    .deliveryAddress {
+        width: 120px;
+    }
+}
 @media (max-width: 631px) {
+    .logoName {
+    }
+    .menu {
+        display: block;
+    }
     .header {
         display: flex;
         height: 112px;
@@ -372,7 +388,7 @@
     .deliverySearch {
         width: 500px;
         margin-left: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 13px;
     }
     .auth {
         display: none;
@@ -395,7 +411,7 @@
     }
 
     .deliveryAddress {
-        width: 165px;
+        width: 145px;
         height: 52px;
         margin: 15px 30px 0px 0px;
     }
@@ -410,7 +426,7 @@
 
 @media (max-width: 548px) {
     .deliveryAddress {
-        width: 150px;
+        width: 140px;
     } 
 }
 
@@ -467,27 +483,11 @@
     }
 }
 @media (max-width: 503px) {
+    .header {
+        width: 100vw;
+    }
     .deliveryAddress {
-        padding-left: 10px;
-        margin: 20px 0px 0px 0px;
-    }
-    .deliveryAddressLocation {
-        display: none;
-    }
-    .deliverySearch {
-        width: 160px;
-        margin: 0px 0px 20px 0px;
-    }
-    .streets {
-        width: 160px;
-        margin-left: 0px;
-        max-height: 200px;
-    }
-    .logoName {
-        font-size: 18px;
-    }
-    .street {
-        font-size: 12px;
+        width: 120px;
     }
 }
 
@@ -522,8 +522,9 @@
     .menu span {
         width: 35px;
         height: 4px;
-        background: white;
+        background: #65906C;
         margin-top: 5px;
+        border-radius: 13px;
     }
 
     .deliveryAddress {

@@ -2,11 +2,16 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CardInfo } from "../../types/types";
 import {orderProd} from '../../types/types'
 
+type prodInCartType = {
+       id: number
+       prodActive: boolean
+}
+
 type initialStateType = {
     productsCart: CardInfo[]
     isLoading: boolean
     cartOpen: boolean
-    prodInCart: boolean
+    prodInCart: number[]
     prodId: null
     message: null | string
     prodAdvice: CardInfo[]
@@ -18,11 +23,12 @@ type prodChange = {
     }
 }
 
+
 const initialState: initialStateType = {
     productsCart: [],
     isLoading: true,
     cartOpen: false,
-    prodInCart: false,
+    prodInCart: [],
     prodId: null,
     message: null,
     prodAdvice: []
@@ -45,7 +51,7 @@ const addProdToCart = createSlice({
         /* Delete prod */
         deleteProdCart: (state, action: PayloadAction<number>) => {
             state.productsCart = state.productsCart.filter(el => action.payload !== el.id)
-            state.prodInCart = false
+            state.prodInCart = state.prodInCart.filter(el => action.payload !== el)
         },
         /* Delete prod */
         cartModal: (state, action) => {
@@ -53,10 +59,7 @@ const addProdToCart = createSlice({
         },
         /* Check Prod */
         productInCart: (state, action) => {
-            if(state.productsCart.filter(el => el.id === action.payload)) {
-                state.prodInCart = true
-                state.prodId = action.payload
-            }
+                state.prodInCart.push(action.payload)
         },
         /* Update Prod */
         updatePriceProd: (state, action) => {
