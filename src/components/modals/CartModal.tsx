@@ -4,7 +4,7 @@ import store, { RootState } from "../../redux/store";
 import style from '../../styles/header/cartModal.module.css'
 import closeModal from '../../images/header-image/closeModal.png'
 import cartEmpty from '../../images/header-image/cartEmpty.png'
-import { cartModal } from "../../redux/slices/products";
+import { cartModal } from "../../redux/slices/productsCart";
 import { useNavigate } from "react-router-dom";
 import { ArrowFunction } from "typescript";
 

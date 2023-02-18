@@ -35,17 +35,15 @@ const HotAppetizers: React.FC<ColdCardType> = React.memo(({title, hotAppetizers}
     }, []);
     
     return (
-        <motion.div ref={hotAppetizers} className={styles.ContentCardBlock}>
+        <div ref={hotAppetizers} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
-            <motion.div className={styles.contentCards}
-                        drag='x'
-                        dragConstraints={{right: 0, left: -1250}}>
-                {isLoading && allProducts.products.map(el => <Card key={el.id} {...el} />)}
+            <div className={styles.contentCards}>
+                {isLoading && allProducts.products.HotAppetizers.map(el => <Card key={el.id} {...el} />)}
                 
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 })
 

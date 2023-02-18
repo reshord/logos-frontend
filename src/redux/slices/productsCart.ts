@@ -1,13 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CardInfo } from "../../types/types";
-import {orderProd} from '../../types/types'
+import { CardInfo, orderProd } from "../../types/types";
 
-type prodInCartType = {
-       id: number
-       prodActive: boolean
-}
-
-type initialStateType = {
+interface initialStateType {
     productsCart: CardInfo[]
     isLoading: boolean
     cartOpen: boolean
@@ -16,13 +10,6 @@ type initialStateType = {
     message: null | string
     prodAdvice: CardInfo[]
 }
-type prodChange = {
-    payload: {
-        id: number
-        totalCount: number
-    }
-}
-
 
 const initialState: initialStateType = {
     productsCart: [],
@@ -41,12 +28,10 @@ const addProdToCart = createSlice({
         /* Add prod */
         pushArr: (state, action: PayloadAction<CardInfo | orderProd>) => {
                 const prodInCart = state.productsCart.find(el => el.id === action.payload.id)
-                if(!prodInCart) {
-                    state.productsCart.push(action.payload)
-                }   
-                else {
-                    prodInCart.count = prodInCart.count + 1
-                }
+                !prodInCart 
+                    ? state.productsCart.push(action.payload)
+                    : prodInCart.count = prodInCart.count + 1
+                
         },
         /* Delete prod */
         deleteProdCart: (state, action: PayloadAction<number>) => {
@@ -65,7 +50,7 @@ const addProdToCart = createSlice({
         updatePriceProd: (state, action) => {
             state.productsCart.map(el => {
                 if(action.payload.id === el.id) {
-                    el.count = action.payload.totalCount
+                    el.count = action.payload.totalCount 
                 }
             })
         },

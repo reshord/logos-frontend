@@ -145,6 +145,7 @@
     padding-right: 40px;
     cursor: pointer;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .countOfPerson {
@@ -390,8 +391,12 @@ label {
 .deliveryBlock {
     display: flex;
     align-items: center;
-    width: 108px;
     justify-content: space-between;
+    width: 115px;
+}
+
+.deliveryBlock span {
+    text-decoration: underline;
 }
 
 @media (max-width: 1100px) {
@@ -683,7 +688,13 @@ label {
 
 @media (max-width: 520px) {
     .deliveryTitle {
-        font-size: 20px;
+        font-size: 24px;
+    }
+    .deliveryBlock {
+        width: 90px;
+    }
+    .deliveryBlock span {
+        font-size: 15px;
     }
     .DeliveryPage {
         width: 80%;

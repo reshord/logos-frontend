@@ -1,7 +1,7 @@
 /* Content */
 
 .content {
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 
@@ -15,29 +15,26 @@
 .contentTitle {
     border-left: 6px solid #618967;
     margin: 0 auto;
-    width: 90%;
-    margin-right: 15px;
-    margin-bottom: 45px;
+    width: 95%;
+    margin-left: 15px;
+    margin-bottom: 20px;
 
 }
 
 .ContentCardBlock {
-    margin-bottom: 30px;
-    padding-bottom: 50px;
-    overflow: hidden;
-    width: 100%;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
+    margin: 30px 0px;
 }
 
 /* Content Cards */
 
 .contentCards {
     display: flex;
-    justify-content: flex-start;
     cursor: grab;
-    margin-left: 40px;
-    width: 90%;
+    width: 97%;
+    margin: 0 auto;
+    overflow-x: scroll;
     box-sizing: border-box;
 }
 
@@ -45,27 +42,36 @@
 
 .card {
     width: 280px;
-    height: 355px;
+    height: 365px;
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     box-sizing: border-box;
     border-radius: 10px;
     margin-left: 20px;
-    cursor: grab;
     position: relative;
+}
+
+.card:hover {
+-webkit-box-shadow: 1px 7px 17px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 7px 17px -3px rgba(0,0,0,0.75);
+box-shadow: 1px 7px 17px -3px rgba(0,0,0,0.75);
 }
 
 .countProd {
     background-color: #79B382;;
     color: white;
     font-size: 20px;
-    width: 50px;
-    height: 50px;
+    width: 47px;
+    height: 47px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
     box-sizing: border-box;
     position: absolute;
     right: 0;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 700;
+    -webkit-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 .cardInfo {
@@ -120,6 +126,9 @@ form {
     font-size: 22px;
     font-weight: 700;
     color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .cardInfoDescription {
@@ -127,7 +136,7 @@ form {
     opacity: 0.4;
     font-size: 13px;
     font-weight: 400;
-    width: 180px;
+    width: 170px;
     height: 30px;
     margin-top: 6px;
 }
@@ -138,7 +147,7 @@ form {
     align-items: center;
     width: 95%;
     margin: 0 auto;
-    padding-top: 25px;
+    padding-top: 35px;
 }
 
 .cardWeight {
@@ -320,7 +329,6 @@ form {
 }
 
 .headerContent {
-    width: 100%;
     height: 90px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -329,10 +337,17 @@ form {
     z-index: 2;
     margin-bottom: 30px;
     background: #403C3B;
-    overflow-x: hidden;
     display: flex;
-    
+    align-items: center;
 }
+
+.filterScrollSection {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
 
 .adaptiveModal {
     position: fixed;
@@ -385,38 +400,16 @@ form {
     padding-top: 50px;
 }
 
-.blockFilterMenu {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 90px;
-}
-
-.blockFilterMenu div {
+.headerContent span {
     color: white;
     font-size: 19px;
     font-weight: 600;
     cursor: pointer;
 }
+
 .blockFilterMenu div:hover {
     opacity: 0.6;
 }
-
-
-
-.dragBlock {
-    display: flex;
-    height: 90px;
-    align-items: center;
-    position: sticky;
-    top: 100px;
-    background: #403C3B;
-    justify-content: space-around;
-    width: 100%;
-}
-
 
 .contactsBtn:hover {
     color: white;
@@ -554,7 +547,7 @@ form {
 
 .authModalContent input {
     width: 400px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 0px 0px;
     height: 45px;
     padding-left: 10px;
     box-sizing: border-box;
@@ -562,6 +555,10 @@ form {
     border: none;
     background: rgba(80, 75, 74, 1);
     color: white;
+}
+
+.authModalContent input:last-child {
+    margin-bottom: 30px;
 }
 
 .notificationWrapper {
@@ -672,11 +669,40 @@ form {
     border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .authActive {
     background: linear-gradient(90deg, #494544 100%, #504B4A 100%);
+}
+
+.streets {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 320px;
+    border-radius: 10px;
+    max-height: 150px;
+    overflow-x: hidden;
+    background: rgba(80, 75, 74, 1);
+    min-height: 55px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.someError {
+    margin: 5px 0px 15px 0px;
+}
+
+.unknown {
+    color: white;
+    font-size: 19px;
+}
+
+.street {
+    color: white;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+   
 }
 
 @media (max-width: 1447px) {
@@ -713,10 +739,6 @@ form {
     .dragBlock {
         width: 1200px;
     }
-    .headerContent {
-        overflow-x: hidden;
-        display: block;
-    }
     .weAreHere {
         top: 820px;
         left: 210px;
@@ -737,6 +759,34 @@ form {
         left: 210px;
     }
 }
+@media (max-width: 750px) {
+   .content {
+        display: flex;
+        flex-direction: column;
+   }
+   .filterScrollSection {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        overflow: scroll;
+        max-width: 90%;
+        margin: 0 auto;
+        height: 80px;
+}
+
+.filterScrollSection span {
+    margin-right: 50px;
+}
+   .blockFilterOption {
+        margin-left: 20px;
+   }
+}
+@media (max-width: 703px) {
+    .contacts {
+        left: 65px;
+    }
+}
+
 @media (max-width: 685px) {
     .blockFilterOption {
         margin-bottom: 40px;
@@ -755,13 +805,14 @@ form {
     }
 }
 
-@media (max-width: 456px) {
-    .gps{
-    }
-}
-@media (max-width: 400px) {
+@media (max-width: 404px) {
     .method  {
-        width: 350px;
+    }
+    .optionFilter {
+        margin-left: 65px;
+    }
+    .blockFilterOption {
+        margin: 0;
     }
 }
 @media (max-width: 384px) {
@@ -777,28 +828,9 @@ form {
 
 
 @media (max-width: 375px) {
-    .headerContent {
-        width: 375px;
-        overflow-x: hidden;
-        height: 80px;
-    }
-    .headerContent span {
-        font-size: 14px;
-    }
-    .dragBlock {
-        height: 85px;
-    }
-    .dragBlock span {
-        margin-right: 20px;
-    }
-
 }
 
 @media (max-width: 663px) {
-    .headerContent {
-        height: 80px;
-        padding-bottom: 10px;
-    }
     .dragBlock {
         height: 70px;
     }
@@ -813,15 +845,12 @@ form {
     }
 }
 @media (max-width: 631px) {
-    .dragBlock {
-        height: 65px;
-    }
-    .headerContent {
-        height: 90px;
-    }
     .weAreHere {
         top: 820px;
         left: 210px;
+    }
+    .contacts {
+        left: 30px;
     }
 }
 @media (max-width: 580px) {
@@ -861,7 +890,6 @@ form {
     }
     .authModalContent input {
         width: 300px;
-        margin-bottom: 20px;
 
     }
     .authHeader {
@@ -875,7 +903,7 @@ form {
         align-items: center;
     }
     .showValue {
-        left: 280px;
+        left: 260px;
     }
     .weAreHere {
         top: 820px;
@@ -883,7 +911,7 @@ form {
     }
     
 }
-@media (max-width: 486px) {
+@media (max-width: 496px) {
     .contacts {
         width: 450px;
         left: 15px;
@@ -901,10 +929,12 @@ form {
     }
 }
 @media (max-width: 463px) {
+    
     .contacts {
         width: 90%;
         left: 20px;
-        height: 100vh;
+        height: 100%;
+        max-height: 500px;
         border-radius: 10px;
     }
     .weAreHere {
@@ -918,8 +948,6 @@ form {
         margin-left: 15px;
     }
     .ourEmail span {
-        flex-wrap: wrap;
-        width: 100px;
         margin-left: 10px;
     }
     .contactsNumber {
@@ -941,12 +969,11 @@ form {
         height: 59px;
         font-size: 12px;
     }
-    .headerContent {
-        z-index: 2;
-        height: 75px;
-    }
     .dragBlock {
         height: 60px;
+    }
+    .authModal {
+        padding-top: 20px;
     }
 }
 @media (max-width: 438px) {
@@ -957,9 +984,6 @@ form {
         font-size: 13px;
         font-weight: 600;
     }
-    .headerContent {
-        width: 440px;
-    }
     .blockFilterMenu div {
         font-size: 20px;
     }
@@ -967,21 +991,15 @@ form {
         width: 400px;
     }
     .showValue {
-        left: 300px;
+        left: 265px;
     }
 }
 @media (max-width: 447px) {
-    .headerContent {
-        width: 446px;
-    }
     .blockFilterMenu div {
         font-size: 20px;
     }
 }
 @media (max-width: 435px) {
-    .headerContent {
-        width: 434px;
-    }
 }
 
 @media (max-width: 422px) {
@@ -992,21 +1010,15 @@ form {
     .contactsBtn {
         font-size: 12px;
     }
-    .headerContent {
-        width: 422px;
-    }
 }
 
 @media (max-width: 417px) {
-    .headerContent {
-        width: 416px;
+    .showValue {
+       left: 300px; 
     }
 }
 
 @media (max-width: 406px) {
-    .headerContent {
-        width: 403px;
-    }
     .blockFilterMenu div {
         font-size: 18px;
     }
@@ -1041,10 +1053,9 @@ form {
         line-height: 1.5;
         font-weight: 600;
     }
-
-    .headerContent {
-        width: 396px;
-    }
+    .showValue {
+        left: 270px; 
+     }
 }
 
 @media (max-width: 377px) {
@@ -1073,31 +1084,17 @@ form {
         width: 350px;
         justify-content: space-around;
     }
-    .headerContent {
-        width: 376px;
-    }
 }
 
 @media (max-width: 374px) {
-    .headerContent {
-        height: 70px;
-    }
-    .dragBlock {
-        height: 50px;
-    }
     .blockFilterMenu {
         margin-bottom: 20px;
     }
 }
 @media (max-width: 357px) {
    .optionFilter {
-        width: 150px;
+        width: 170px;
         margin-left: 55px;
    }
-   .dragBlock {
-        height: 45px;
-   }
-   .headerContent {
-        height: 75px;
-   }
+   
 }

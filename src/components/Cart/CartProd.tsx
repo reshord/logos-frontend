@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from '../../styles/cart/cart.module.css'
 import deleteProd from '../../images/cards/delete.png'
-import { deleteProdCart } from "../../redux/slices/products";
+import { deleteProdCart } from "../../redux/slices/productsCart";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import store, { RootState } from "../../redux/store";
-import { productInCart } from "../../redux/slices/products";
-import {updatePriceProd} from '../../redux/slices/products'
+import { productInCart } from "../../redux/slices/productsCart";
+import {updatePriceProd} from '../../redux/slices/productsCart'
 
 type CartProdTypes = {
     image: string,
@@ -32,25 +32,24 @@ const CartProd:React.FC<CartProdTypes> = ({image, title, description, count, pri
     }
 
     const countPlus = (id: number) => {
-        const totalCount = countProd + 1
-        setCountProd(totalCount)
-        setTotalPrice(price * (totalCount))
-        dispatch(updatePriceProd({id, totalCount}))
+        setCountProd(countProd + 1)
+        setTotalPrice(totalPrice + price)
+        dispatch(updatePriceProd({id, totalCount: countProd + 1}))
     }
 
     const countMinus = (id: number) => {
-        const totalCount = countProd - 1
         if(countProd <= 1) {
             dispatch(deleteProdCart(id))
         }
-        setCountProd(countProd - 1)
-        setTotalPrice(totalPrice - price)
-        dispatch(updatePriceProd({id, totalCount}))
+        else {
+            setCountProd(countProd - 1)
+            setTotalPrice(totalPrice - price)
+            dispatch(updatePriceProd({id, totalCount: countProd - 1}))
+        }
     }
 
     useEffect(() => {
-        setTotalPrice(price * count)
-        setCountProd(count)
+        setTotalPrice(price * countProd)
     }, [count]);
     
     return (

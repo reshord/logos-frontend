@@ -6,7 +6,7 @@ import { useAppSelector } from "../../../redux/hooks";
 import store, { RootState } from "../../../redux/store";
 
 
-type ColdCardType = {
+interface ColdCardType {
     title: string,
     fishMeals: Ref<HTMLDivElement>,
 }
@@ -27,17 +27,15 @@ const FishMeals: React.FC<ColdCardType> = React.memo(({title, fishMeals}) => {
     }, []);
     
     return (
-        <motion.div ref={fishMeals} className={styles.ContentCardBlock}>
+        <div ref={fishMeals} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
-            <motion.div className={styles.contentCards}
-                        drag='x'
-                        dragConstraints={{right: 0, left: -1250}}>
-                {isLoading && allProducts.products.map(el => <Card key={el.id} {...el} />)}
+            <div className={styles.contentCards}>
+                {isLoading && allProducts.products.FishMeals.map(el => <Card key={el.id} {...el} />)}
                 
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 })
 

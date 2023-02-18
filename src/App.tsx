@@ -12,9 +12,6 @@ function App() {
 
   const refApp = useRef<HTMLDivElement>(null)
 
-
-
-
   return (
     <div className={styles.App} ref={refApp}>
         <Header />

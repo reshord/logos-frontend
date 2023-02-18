@@ -10,12 +10,12 @@ import axios from 'axios'
 import { CardInfo } from "../../../types/types";
 
 
-type ColdCardType = {
+interface IColdCard {
     title: string,
     meatDishes: Ref<HTMLDivElement>,
 }
 
-const MeatDishes: React.FC<ColdCardType> = React.memo(({title, meatDishes}) => {
+const MeatDishes: React.FC<IColdCard> = React.memo(({title, meatDishes}) => {
     const carousel = useRef<HTMLDivElement>(null)
 
     const [offsetWidth, setOffsetWidth] = useState<number | undefined>()
@@ -31,17 +31,14 @@ const MeatDishes: React.FC<ColdCardType> = React.memo(({title, meatDishes}) => {
     }, []);
     
     return (
-        <motion.div ref={meatDishes} className={styles.ContentCardBlock}>
+        <div ref={meatDishes} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
-            <motion.div className={styles.contentCards}
-                        drag='x'
-                        dragConstraints={{right: 0, left: -1250}}>
-                {isLoading && allProducts.products.map(el => <Card key={el.id} {...el} />)}
-                
-            </motion.div>
-        </motion.div>
+                <div className={styles.contentCards}>
+                    {isLoading && allProducts.products.MeatDishes.map(el => <Card key={el.id} {...el} />)}
+                </div>
+        </div>
     )
 })
 

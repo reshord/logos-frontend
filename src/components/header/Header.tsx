@@ -6,10 +6,10 @@ import styles from '../../styles/header/header.module.css'
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import store, { RootState } from "../../redux/store";
-import { cartModal } from "../../redux/slices/products";
+import { cartModal } from "../../redux/slices/productsCart";
 import Profile from '../../images/header-image/Profile.png'
 import cartMedia from '../../images/cards/Buy.png'
-import { logout } from "../../axios";
+// import { logout } from "../../axios";
 import { activeAdaptiveModal } from "../../redux/slices/activeModals";
 
 const Header = () => {
@@ -43,7 +43,7 @@ const Header = () => {
     const headerLogout = () => {
         if(data) {
             const {email} = data
-            dispatch(logout(email))
+            // dispatch(logout(email))
         }
     }
 
@@ -51,15 +51,20 @@ const Header = () => {
         return street.toLowerCase().includes(value.toLowerCase())
     })
 
-    const allProdsCount = productsCart.reduce((acc, cur) => {
+    const allCountProd = productsCart.reduce((acc, cur) => {
         return acc + cur.count
     }, 0)
 
-    const closeStreet = (e: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
-        if(e.target !== refHeaderInput.current) {
-            setOnInput(false)
-        }
-    }
+    // const closeStreet = (e: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
+        // if(e.target !== refHeaderInput.current) {
+        //     setOnInput(false)
+        // }
+        window.addEventListener('click', (e) => {
+            if(e.target !== refHeaderStreet.current && e.target !== refHeaderInput.current) {
+                setValue('')
+            }
+        })
+    // }
     const openMobileModal = () => {
         dispatch(activeAdaptiveModal())
     }
@@ -80,7 +85,7 @@ const Header = () => {
 
 
     return (
-        <div className={styles.header} onClick={(e) => closeStreet(e)}>
+        <div className={styles.header}>
             <div className={styles.menu} onClick={() => openMobileModal()}>
                 <span></span>
                 <span></span>
@@ -145,7 +150,7 @@ const Header = () => {
                         <Link to={'/cart'}>
                             <div className={styles.cart}>
                                 <b>Корзина</b>
-                                <span className={styles.cartCounter}>{allProdsCount}</span>
+                                <span className={styles.cartCounter}>{allCountProd}</span>
                             </div>
                         </Link>
             </div>

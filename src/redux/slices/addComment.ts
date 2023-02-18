@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getComments } from "../../axios";
+// import { getComments } from "../../axios";
 import { ReviewsTypes } from "../../types/types";
 
 type initialStateType = {
@@ -26,17 +26,17 @@ const comments = createSlice({
         }
     },
     extraReducers: {
-        [getComments.pending.toString()]: (state) => {
-            state.success = false
-            state.AllComments = []
-        },
-        [getComments.fulfilled.toString()]: (state, {payload}) => {
-            state.success = true
-            state.AllComments = payload
-        },
-        [getComments.rejected.toString()]: (state) => {
-            state.success = false
-        }
+        // [getComments.pending.toString()]: (state) => {
+        //     state.success = false
+        //     state.AllComments = []
+        // },
+        // [getComments.fulfilled.toString()]: (state, {payload}) => {
+        //     state.success = true
+        //     state.AllComments = payload
+        // },
+        // [getComments.rejected.toString()]: (state) => {
+        //     state.success = false
+        // }
     }
 })
 

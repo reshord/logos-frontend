@@ -10,12 +10,12 @@ import axios from 'axios'
 import { CardInfo } from "../../../types/types";
 
 
-type ColdCardType = {
+interface IColdCard {
     title: string,
     coldAppetizers: Ref<HTMLDivElement>,
 }
 
-const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetizers}) => {
+const ColdSnacks: React.FC<IColdCard> = React.memo(({title, coldAppetizers}) => {
     const carousel = useRef<HTMLDivElement>(null)
 
     const dispatch = useAppDispatch()
@@ -30,23 +30,19 @@ const ContenCardBlock: React.FC<ColdCardType> = React.memo(({title, coldAppetize
         setOffsetWidth(carousel.current?.offsetWidth);
 
         setScrollWidth(carousel.current?.scrollWidth);
-        console.log(carousel.current);
-        
     }, []);
     
     return (
-        <motion.div ref={coldAppetizers} className={styles.ContentCardBlock}>
+        <div ref={coldAppetizers} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
-            <motion.div className={styles.contentCards}
-                        drag='x'
-                        dragConstraints={{right: 0, left: -1250}}>
-                {isLoading && allProducts.products.map(el => <Card key={el.id} {...el} />)}
+            <div className={styles.contentCards}>
+                {isLoading && allProducts.products.СoldSnacks.map(el => <Card key={el.id} {...el} />)}
                 
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 })
 
-export default ContenCardBlock
+export default ColdSnacks

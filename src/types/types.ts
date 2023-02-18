@@ -1,4 +1,4 @@
-export type CardInfo = {
+export interface CardInfo {
     id: number,
     image: string,
     title: string,
@@ -8,11 +8,13 @@ export type CardInfo = {
     price: number,
     popular: number
 }
-export type LogoutType = {
+
+
+export interface LogoutType {
     email: string,
 }
 
-export type orderProd = {
+export interface orderProd {
     id: number,
     image: string,
     title: string,
@@ -25,18 +27,18 @@ export type orderProd = {
 
 
 export interface FieldValues {
+    name?: string
     email?: string
     password?: string | number
     confirmPassword?: string | number,
 }
 export interface ReviewsTypes {
-    email?: string
     id?: number
-    name?: string,
+    email?: string,
     body?: string,
     params?: number
 }
-export type PayloadData = {
+export interface PayloadData {
     payload: {
         message: string
         token: string
@@ -49,3 +51,15 @@ export type PayloadData = {
         }
     }
 }   
+
+export interface prodInCartType {
+    id: number
+    prodActive: boolean
+}
+
+export interface prodChange {
+ payload: {
+     id: number
+     totalCount: number
+ }
+}

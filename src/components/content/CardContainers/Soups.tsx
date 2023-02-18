@@ -10,12 +10,12 @@ import axios from 'axios'
 import { CardInfo } from "../../../types/types";
 
 
-type ColdCardType = {
+interface IColdCard {
     title: string,
     soups: Ref<HTMLDivElement>,
 }
 
-const Soups: React.FC<ColdCardType> = React.memo(({title, soups}) => {
+const Soups: React.FC<IColdCard> = React.memo(({title, soups}) => {
     const carousel = useRef<HTMLDivElement>(null)
 
     const [offsetWidth, setOffsetWidth] = useState<number | undefined>()
@@ -33,17 +33,15 @@ const Soups: React.FC<ColdCardType> = React.memo(({title, soups}) => {
     }, []);
     
     return (
-        <motion.div ref={soups} className={styles.ContentCardBlock}>
+        <div ref={soups} className={styles.ContentCardBlock}>
             <div className={styles.contentTitle}>
                 <span>{title}</span>
             </div>
-            <motion.div className={styles.contentCards}
-                        drag='x'
-                        dragConstraints={{right: 0, left: -1250}}>
-                {isLoading && allProducts.products.map(el => <Card key={el.id} {...el} />)}
+            <div className={styles.contentCards}>
+                {isLoading && allProducts.products.Soups.map(el => <Card key={el.id} {...el} />)}
                 
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 })
 

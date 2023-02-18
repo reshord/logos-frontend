@@ -6,10 +6,10 @@ import { useParams } from "react-router-dom";
 import Header from "../header/Header";
 import HeaderContent from "../content/HeaderContent";
 import Footer from "../Footer/Footer";
-import { pushArr } from "../../redux/slices/products";
+import { pushArr } from "../../redux/slices/productsCart";
 import styles from '../../styles/ProdInfo/prodInfo.module.css'
 import cart from '../../images/Cart.png'
-import { getComments,  } from "../../axios";
+// import { getComments,  } from "../../axios";
 import {addCommentToList} from "../../redux/slices/addComment";
 import ScrollTopButton from "../ScrollTop";
 
@@ -40,13 +40,13 @@ const ProdInfo: React.FC = () => {
     }
 
     useEffect(() => {
-        allProducts.products.map(el => {
-            if(Number(params.id) === el.id) {
-                setProduct(el)
-            }
-        })
+        // allProducts.products.map(el => {
+        //     if(Number(params.id) === el.id) {
+        //         setProduct(el)
+        //     }
+        // })
         // axios.get(`https://jsonplaceholder.typicode.com/post/${params.id}/comments`).then(res => setReviews(res.data))
-        dispatch(getComments(params))
+        // dispatch(getComments(params))
     }, [product]);
 
    
@@ -58,7 +58,7 @@ const ProdInfo: React.FC = () => {
             <div className="prodInfoImage">
                 <img className={styles.prodImg} src={product?.image} alt="" />
             </div>
-            <div className="prodInfo">
+            <div className={styles.blockInfo}>
                     <div className={styles.prodInfoHeader}>
                         <span className={styles.title}>{product?.title}</span>
                         <span className={styles.description}>{product?.description}</span>
@@ -69,7 +69,6 @@ const ProdInfo: React.FC = () => {
                             <button className={styles.btn}>
                                 В корзину
                             </button>
-                            <img src={cart} alt="" />
                             <span className={styles.price}>{product?.price} ₽</span>
                         </div>
                         <div>
@@ -84,7 +83,7 @@ const ProdInfo: React.FC = () => {
             <div className={styles.someReviews}>
                 {AllComments?.map(el => 
                     <div key={el.id} className={styles.block}>
-                        <div className={styles.commentatorEmail}>{el.email}</div>
+                        <div className={styles.commentatorname}>{el.email}</div>
                         <div className={styles.commentBody}>{el.body}</div>
                     </div>
                 )}

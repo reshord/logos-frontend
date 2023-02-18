@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from '../../styles/delivery/delivery.module.css'
 import HeaderContent from "../content/HeaderContent";
 import Footer from "../Footer/Footer";
 import Header from "../header/Header";
 import TimeOut from "./TimeOut";
 import arrow from '../../images/header-image/Arrow.png'
+import { useAppSelector } from "../../redux/hooks";
+import store, { RootState } from "../../redux/store";
 
 const DeliveryPage = () => {
                             /* Hooks */
     const [activeDelivery, setActiveDelivery] = useState<number>(0)
     const [methodDelivery, setMethodDelivery] = useState<number>(0)
     const [timeOfDelivery, setTimeOfDelivery] = useState<number>(0)
+    const {addProdToCart, auth} = useAppSelector<RootState>(store.getState)
+    const navigate = useNavigate()
+
                             /* Hooks */
 
     const delivery = ['Доставка', 'Самовызов'],
@@ -21,11 +26,14 @@ const DeliveryPage = () => {
     let date: string = `${new Date().getHours()}:${new Date().getMinutes()}`
 
     useEffect(() => {
+        if(!auth.isAuth) {
+            navigate('/')
+        }
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             })
-    }, []);
+    }, [auth.isAuth]);
 
 return (
     <>

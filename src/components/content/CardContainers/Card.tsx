@@ -3,9 +3,9 @@ import styles from '../../../styles/content/Content.module.css'
 import buy from '../../../images/cards/Buy.png'
 import { CardInfo } from "../../../types/types";
 import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
-import { pushArr, productInCart, deleteProdCart } from "../../../redux/slices/products";
+import { pushArr, productInCart, deleteProdCart } from "../../../redux/slices/productsCart";
 import store, { RootState } from "../../../redux/store";
-import { updatePriceProd } from "../../../redux/slices/products";
+import { updatePriceProd } from "../../../redux/slices/productsCart";
 import { Link } from "react-router-dom";
 
 
@@ -14,39 +14,26 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
     const {addProdToCart} = useAppSelector<RootState>(store.getState)
     const {productsCart, isLoading, cartOpen, prodInCart, prodId } = addProdToCart
     const [totalPrice, setTotalPrice] = useState<number>(price)
-    const [totalCount, setTotalCount] = useState<number>(count + 1)
+    const [totalCount, setTotalCount] = useState<number>(count)
     
-    useEffect(() => {
-        
-        productsCart.map(el => {
-            if(id === el.id) {
-                setTotalPrice(price * el.count)
-                setTotalCount(el.count + 1)
-            }
-        })
-
-    }, [count]);
-
-
-
     const pricePlus = () => {
-        if(totalCount <= count) {
-            setTotalPrice(totalPrice * totalCount)
-        }
-        setTotalCount(totalCount + 1)
-        setTotalPrice(price * totalCount)
-        dispatch(updatePriceProd({id, totalCount}))
 
+        setTotalCount(totalCount + 1)
+        setTotalPrice(price * (totalCount + 1))
+        dispatch(updatePriceProd({id, totalCount: totalCount + 1}))
     }
     const priceMinus = () => {
-        if(totalPrice === price) {
+        if(totalCount <= 1) {
             dispatch(deleteProdCart(id))
-            dispatch(updatePriceProd(1))
-            setTotalCount(count)
+            dispatch(updatePriceProd({id, totalCount: 1}))
+            setTotalCount(1)
         }
-        setTotalCount(totalCount - 1)
-        setTotalPrice(totalPrice - price)
-        dispatch(updatePriceProd({id, totalCount}))
+        else{
+            setTotalCount(totalCount - 1)
+            setTotalPrice(totalPrice - price)
+            dispatch(updatePriceProd({id, totalCount: totalCount - 1}))
+
+        }
     }
 
     const addToCart = (data: CardInfo) => {
@@ -54,16 +41,28 @@ const Card: React.FC<CardInfo> = ({id, image, title, count, description, weight,
         dispatch(productInCart(data.id))
     }
 
+    useEffect(() => {
+        productsCart.map(el => {
+            if(id === el.id) {
+                setTotalPrice(price * el.count)
+                setTotalCount(el.count)
+            }
+        })
+    }, []);
 
 
     return (
         <div className={styles.card}>
+            {prodInCart.includes(id) && (
+                <div className={styles.countProd}>
+                    {totalCount}
+                 </div>
+            )}
             <Link to={`/infoProduct/${id}`}>
             <div className={styles.cardImage}>
                 {image ? <img src={image} alt="" /> : <div>Загрузка...</div>}
             </div>
             </Link>
-
             <div className={styles.cardHeaderInfo}>
                 <div className={styles.cardInfo}>
                     <span className={styles.cardInfoTitle}>

@@ -11,10 +11,10 @@ import { useNavigate } from 'react-router-dom'
 import Arrow from '../../images/header-image/Arrow.png'
 import AddToOrder from "./AddToOrder";
 import axios from "axios";
-import { cartProdAdvice } from "../../redux/slices/products";
+import { cartProdAdvice } from "../../redux/slices/productsCart";
 import { CardInfo } from "../../types/types";
 import { motion } from "framer-motion";
-import { logout } from "../../axios";
+// import { logout } from "../../axios";
 
 const Cart: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -25,6 +25,9 @@ const Cart: React.FC = () => {
 
     const summProd = productsCart.reduce((acc, cur) => {
         return acc + cur.price * cur.count
+    }, 0)
+    const allCountProd = productsCart.reduce((acc, cur) => {
+        return acc + cur.count
     }, 0)
 
 
@@ -53,22 +56,11 @@ const Cart: React.FC = () => {
                     <div className={styles.cartTitle}>
                         <p>КОРЗИНА</p> 
                         <span>{productsCart.length > 0 
-                        ? `(в корзине ${productsCart.length} товар(-а))`
+                        ? `(в корзине ${allCountProd} товар(-а))`
                         : '(корзина пуста)' }</span>
                     </div>
                     <div className="cart-products">
                         {productsCart.map(el => <CartProd key={el.id} {...el}/>)}
-                    </div>
-                    <div className={styles.cartFooter}>
-                        <div className={styles.cartFooterTitle}>
-                            ДОБАВИТЬ К ЗАКАЗУ
-                        </div>
-                            <div  className={styles.AddToOrder}>
-                                {prodAdvice.map(el => <AddToOrder key={el.id} {...el}/>)}
-                                {prodAdvice.length === 0 && (
-                                    <div>Нет товаров</div>
-                                )}
-                        </div>
                     </div>
                 </div>
 
@@ -87,6 +79,8 @@ const Cart: React.FC = () => {
                                         Оформить заказ
                             </button>
                         </Link>
+                        {!isAuth 
+                            && <Link className={styles.toAuth} to={'/auth'}>(Необходимо авторизоваться)</Link>}
                     </div>
                 </div>
             <Footer />

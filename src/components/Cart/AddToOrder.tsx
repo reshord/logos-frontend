@@ -2,7 +2,7 @@ import React from "react";
 import { CardInfo } from "../../types/types";
 import styles from '../../styles/cart/cart.module.css'
 import { useAppDispatch } from "../../redux/hooks";
-import { pushArr } from "../../redux/slices/products";
+import { pushArr } from "../../redux/slices/productsCart";
 import { orderProd } from "../../types/types";
 
 const AddToOrder: React.FC<CardInfo> = ({image, title, price, id, count, weight, description, popular}) => {
